@@ -47,6 +47,10 @@
 !assets/aroza-community-new.css
 !assets/aroza-newsletter-new.css
 
+# Allow docs (e.g. dev plans)
+!docs/
+!docs/*.md
+
 # Allow cursor rules and project config
 !.cursor/
 !.cursor/rules/
