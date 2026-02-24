@@ -1,0 +1,361 @@
+.Index_bestsellers_cards_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Index_bestsellers_cards_header_new {
+  padding: 24px 24px 40px 24px;
+}
+
+.Index_bestsellers_cards_header_small_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 10px 0;
+}
+
+.Index_bestsellers_cards_header_large_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #000;
+  letter-spacing: -1.8px;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Index_bestsellers_cards_swiper_new {
+  padding: 0 24px 0 42px;
+  overflow: hidden;
+}
+
+.Index_bestsellers_cards_slide_new {
+  height: auto;
+}
+
+.Index_bestsellers_cards_card_new {
+  width: 340px;
+  background: #fff;
+  padding: 0;
+}
+
+.Index_bestsellers_cards_card_image_new {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.Index_bestsellers_cards_card_image_new a {
+  display: block;
+  width: 292px;
+  height: 180px;
+}
+
+.Index_bestsellers_cards_card_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.Index_bestsellers_cards_card_image_new:hover .Index_bestsellers_cards_card_img_new {
+  transform: scale(1.05);
+}
+
+.Index_bestsellers_cards_card_dots_new {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.Index_bestsellers_cards_card_dot_new {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.Index_bestsellers_cards_card_dot_new.active {
+  background: #000;
+}
+
+.Index_bestsellers_cards_card_details_new {
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Index_bestsellers_cards_card_selector_new {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Index_bestsellers_cards_card_selector_header_new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Index_bestsellers_cards_card_color_label_new {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.Index_bestsellers_cards_card_color_label_title_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.Index_bestsellers_cards_card_color_label_value_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+}
+
+.Index_bestsellers_cards_card_sizefit_new {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  text-decoration: underline;
+}
+
+.Index_bestsellers_cards_card_variants_new {
+  display: flex;
+  gap: 8px;
+}
+
+.Index_bestsellers_cards_card_variant_new {
+  width: 55px;
+  height: 39px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.Index_bestsellers_cards_card_variant_new.active {
+  border-color: #000;
+}
+
+.Index_bestsellers_cards_card_variant_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Index_bestsellers_cards_card_info_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Index_bestsellers_cards_card_rating_new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Index_bestsellers_cards_card_stars_new {
+  display: flex;
+  gap: 2px;
+}
+
+.Index_bestsellers_cards_card_rating_count_new {
+  font-family: var(--font-mono-family, 'TT Norms Pro Mono', monospace);
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+}
+
+.Index_bestsellers_cards_card_name_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.Index_bestsellers_cards_card_name_new:hover {
+  text-decoration: underline;
+}
+
+.Index_bestsellers_cards_card_price_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  letter-spacing: 0.75px;
+  margin: 0;
+}
+
+.Index_bestsellers_cards_card_tagline_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+  margin: 0;
+}
+
+.Index_bestsellers_cards_card_audio_new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Index_bestsellers_cards_card_audio_label_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.Index_bestsellers_cards_card_audio_toggle_new {
+  display: flex;
+  gap: 8px;
+}
+
+.Index_bestsellers_cards_card_audio_btn_new {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid #dbdbdb;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #000;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 14px;
+}
+
+.Index_bestsellers_cards_card_audio_btn_new.active {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.Index_bestsellers_cards_card_purchase_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.Index_bestsellers_cards_card_addtocart_new {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.Index_bestsellers_cards_card_qty_new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #0c0c0c;
+  background: #fff;
+  padding: 0 8px;
+  height: 52px;
+}
+
+.Index_bestsellers_cards_card_qty_btn_new {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  padding: 0;
+}
+
+.Index_bestsellers_cards_card_qty_input_new {
+  width: 20px;
+  text-align: center;
+  border: none;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 15px;
+  background: transparent;
+  -moz-appearance: textfield;
+}
+
+.Index_bestsellers_cards_card_qty_input_new::-webkit-outer-spin-button,
+.Index_bestsellers_cards_card_qty_input_new::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Index_bestsellers_cards_card_atc_btn_new {
+  flex: 1;
+  height: 52px;
+  background: #116885;
+  border: 1px solid #000;
+  color: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.Index_bestsellers_cards_card_atc_btn_new:hover {
+  opacity: 0.85;
+}
+
+.Index_bestsellers_cards_card_rx_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.Index_bestsellers_cards_card_rx_line_new {
+  display: block;
+  width: 172px;
+  height: 2px;
+  background: #000;
+}
+
+.Index_bestsellers_cards_card_rx_new span:nth-child(2) {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .Index_bestsellers_cards_swiper_new {
+    padding: 0 24px;
+  }
+
+  .Index_bestsellers_cards_header_large_new {
+    font-size: 28px;
+  }
+}

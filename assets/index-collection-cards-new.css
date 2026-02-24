@@ -1,0 +1,137 @@
+.Index_collection_cards_main_new {
+  position: relative;
+  width: 100%;
+}
+
+.Index_collection_cards_grid_new {
+  display: flex;
+  width: 100%;
+}
+
+.Index_collection_cards_grid_new .Index_collection_cards_card_new {
+  flex: 1;
+  height: 680px;
+}
+
+.Index_collection_cards_card_new {
+  position: relative;
+  overflow: hidden;
+}
+
+.Index_collection_cards_card_link_new {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.Index_collection_cards_card_bg_new {
+  position: absolute;
+  inset: 0;
+}
+
+.Index_collection_cards_card_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.Index_collection_cards_card_new:hover .Index_collection_cards_card_img_new {
+  transform: scale(1.05);
+}
+
+.Index_collection_cards_card_label_new {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1;
+}
+
+.Index_collection_cards_card_label_new span {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.Index_collection_cards_overlay_new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 48px 24px;
+  pointer-events: none;
+}
+
+.Index_collection_cards_overlay_inner_new {
+  pointer-events: auto;
+}
+
+.Index_collection_cards_overlay_small_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.Index_collection_cards_overlay_large_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+  letter-spacing: -1.8px;
+  text-transform: capitalize;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.Index_collection_cards_overlay_cta_new {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Index_collection_cards_overlay_subtitle_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+  margin: 0;
+}
+
+.Index_collection_cards_overlay_link_new {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.Index_collection_cards_overlay_link_new span:first-child {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.Index_collection_cards_overlay_link_underline_new {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  margin-top: 8px;
+}
+
+.Index_collection_cards_swiper_new .Index_collection_cards_card_new {
+  height: 580px;
+}
+
+@media screen and (max-width: 768px) {
+  .Index_collection_cards_overlay_large_new {
+    font-size: 28px;
+  }
+}

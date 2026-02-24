@@ -1,0 +1,224 @@
+{{ 'index-community-instagram-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Index_community_instagram_main_new">
+  <div class="Index_community_instagram_inner_new">
+    <div class="Index_community_instagram_header_new">
+      <div class="Index_community_instagram_header_left_new">
+        {%- if section.settings.heading_small != blank -%}
+          <p class="Index_community_instagram_header_small_new">{{ section.settings.heading_small }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading_large != blank -%}
+          <div class="Index_community_instagram_header_title_new">
+            {%- if section.settings.logo_icon != blank -%}
+              <div class="Index_community_instagram_header_icon_new">
+                {{
+                  section.settings.logo_icon |
+                  image_url: width: 92 |
+                  image_tag: widths: '46, 92',
+                  fetchpriority: 'auto',
+                  class: 'Index_community_instagram_header_icon_img_new'
+                }}
+              </div>
+            {%- endif -%}
+            <h2 class="Index_community_instagram_header_large_new">{{ section.settings.heading_large }}</h2>
+          </div>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+        <div class="Index_community_instagram_header_right_new Desktop_only_new">
+          <a href="{{ section.settings.button_link }}" class="Index_community_instagram_header_button_new" target="_blank" rel="noopener">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="Index_community_instagram_grid_new Desktop_only_new">
+      {%- assign desktop_instagram_item_selections = shop.metaobjects.desktop_instagram_item_selections -%}
+      {%- for selection in desktop_instagram_item_selections.values -%}
+        {%- if selection.instagram_item_list.value != blank -%}
+          {%- assign items = selection.instagram_item_list.value -%}
+          <div class="Index_community_instagram_col_new Index_community_instagram_col_1_new">
+            {%- for item in items limit: 1 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_short_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+            {%- for item in items limit: 1 offset: 1 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_tall_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class="Index_community_instagram_col_new Index_community_instagram_col_2_new">
+            {%- for item in items limit: 1 offset: 2 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_tall_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+            {%- for item in items limit: 1 offset: 3 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_short_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class="Index_community_instagram_col_new Index_community_instagram_col_3_new">
+            {%- for item in items limit: 1 offset: 4 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_short_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+            {%- for item in items limit: 1 offset: 5 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_item_tall_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 700 | image_tag: widths: '350, 500, 700', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="Index_community_instagram_grid_mobile_new Mobile_only_new">
+      {%- assign mobile_instagram_item_selections = shop.metaobjects.mobile_instagram_item_selections -%}
+      {%- for selection in mobile_instagram_item_selections.values -%}
+        {%- if selection.instagram_item_list.value != blank -%}
+          {%- assign items = selection.instagram_item_list.value -%}
+          <div class="Index_community_instagram_mobile_col_new">
+            {%- for item in items limit: 1 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_mobile_short_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 400 | image_tag: widths: '200, 300, 400', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+            {%- for item in items limit: 1 offset: 1 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_mobile_tall_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 400 | image_tag: widths: '200, 300, 400', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+          <div class="Index_community_instagram_mobile_col_new">
+            {%- for item in items limit: 1 offset: 2 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_mobile_tall_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 400 | image_tag: widths: '200, 300, 400', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+            {%- for item in items limit: 1 offset: 3 -%}
+              <div class="Index_community_instagram_item_new Index_community_instagram_mobile_short_new">
+                {%- if item.item_redirect_link.value != blank -%}<a href="{{ item.item_redirect_link.value }}">{%- endif -%}
+                  {%- if item.image_or_video.value contains "files" -%}
+                    {{ item.image_or_video.value | image_url: width: 400 | image_tag: widths: '200, 300, 400', class: 'Index_community_instagram_media_new' }}
+                  {%- else -%}
+                    {{ item.image_or_video.value | video_tag: class: 'Index_community_instagram_media_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                  {%- endif -%}
+                {%- if item.item_redirect_link.value != blank -%}</a>{%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+      <div class="Index_community_instagram_footer_button_new Mobile_only_new">
+        <a href="{{ section.settings.button_link }}" class="Index_community_instagram_header_button_new" target="_blank" rel="noopener">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Index Community Instagram",
+    "class": "Index_community_instagram_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Small Heading",
+        "default": "JOIN THE COMMUNITY"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Large Heading",
+        "default": "Say hello to chamelo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_icon",
+        "label": "Logo Icon"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "FOLLOW @HELLOCHAMELO"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Community Instagram"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,236 @@
+{{ 'index-reviews-ugc-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Index_reviews_ugc_main_new">
+  <div class="Index_reviews_ugc_inner_new">
+    <div class="Index_reviews_ugc_header_new">
+      {%- if section.settings.heading_small != blank -%}
+        <p class="Index_reviews_ugc_header_small_new">{{ section.settings.heading_small }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading_large != blank -%}
+        <h2 class="Index_reviews_ugc_header_large_new">{{ section.settings.heading_large }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="Index_reviews_ugc_videos_new">
+      <div class="Index_reviews_ugc_videos_swiper_new swiper" id="reviews-ugc-videos-{{ section.id }}">
+        <div class="swiper-wrapper">
+          {%- assign ugc_items = section.blocks | where: 'type', 'ugc_item' -%}
+          {%- for block in ugc_items -%}
+            <div class="swiper-slide Index_reviews_ugc_video_slide_new" {{ block.shopify_attributes }}>
+              <div class="Index_reviews_ugc_video_card_new">
+                {%- if block.settings.video != blank -%}
+                  {{ block.settings.video | video_tag: class: 'Index_reviews_ugc_video_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+                {%- elsif block.settings.image != blank -%}
+                  {{
+                    block.settings.image |
+                    image_url: width: 560 |
+                    image_tag: widths: '280, 420, 560',
+                    fetchpriority: 'lazy',
+                    class: 'Index_reviews_ugc_video_img_new'
+                  }}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="Index_reviews_ugc_reviews_new">
+      <div class="Index_reviews_ugc_reviews_swiper_new swiper" id="reviews-ugc-reviews-{{ section.id }}">
+        <div class="swiper-wrapper">
+          {%- assign review_items = section.blocks | where: 'type', 'review' -%}
+          {%- for block in review_items -%}
+            <div class="swiper-slide Index_reviews_ugc_review_slide_new" {{ block.shopify_attributes }}>
+              <div class="Index_reviews_ugc_review_card_new">
+                <div class="Index_reviews_ugc_review_quote_new">
+                  <p>{{ block.settings.quote }}</p>
+                </div>
+                <div class="Index_reviews_ugc_review_user_new">
+                  {%- if block.settings.avatar != blank -%}
+                    <div class="Index_reviews_ugc_review_avatar_new">
+                      {{
+                        block.settings.avatar |
+                        image_url: width: 108 |
+                        image_tag: widths: '54, 108',
+                        fetchpriority: 'lazy',
+                        class: 'Index_reviews_ugc_review_avatar_img_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Index_reviews_ugc_review_avatar_new Index_reviews_ugc_review_avatar_placeholder_new"></div>
+                  {%- endif -%}
+                  <div class="Index_reviews_ugc_review_info_new">
+                    <div class="Index_reviews_ugc_review_stars_new">
+                      {%- for i in (1..5) -%}
+                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.5 0L8.16 4.08L12.6 4.58L9.3 7.52L10.18 11.88L6.5 9.77L2.82 11.88L3.7 7.52L0.4 4.58L4.84 4.08L6.5 0Z" fill="#FFD700"/>
+                        </svg>
+                      {%- endfor -%}
+                    </div>
+                    {%- if block.settings.name != blank -%}
+                      <p class="Index_reviews_ugc_review_name_new">{{ block.settings.name }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.date != blank -%}
+                      <p class="Index_reviews_ugc_review_date_new">{{ block.settings.date }}</p>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.cta_text != blank or section.settings.button_text != blank -%}
+      <div class="Index_reviews_ugc_cta_new">
+        {%- if section.settings.cta_text != blank -%}
+          <p class="Index_reviews_ugc_cta_text_new">{{ section.settings.cta_text }}</p>
+        {%- endif -%}
+        {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+          <a href="{{ section.settings.button_link }}" class="Index_reviews_ugc_cta_button_new">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#reviews-ugc-videos-{{ section.id }}', {
+        slidesPerView: 1.8,
+        spaceBetween: 12,
+        centeredSlides: true,
+        breakpoints: {
+          769: {
+            slidesPerView: 5,
+            spaceBetween: 12,
+            centeredSlides: false
+          }
+        }
+      });
+
+      new Swiper('#reviews-ugc-reviews-{{ section.id }}', {
+        slidesPerView: 1.2,
+        spaceBetween: 0,
+        breakpoints: {
+          769: {
+            slidesPerView: 4,
+            spaceBetween: 0
+          }
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Index Reviews UGC",
+    "class": "Index_reviews_ugc_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Small Heading",
+        "default": "THOUSANDS OF TRUSTED REVIEWS"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Large Heading",
+        "default": "From People Like You"
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Ready to choose your right set?"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "VIEW ALL PRODUCTS"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#2c4a4e"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "ugc_item",
+        "name": "UGC Video/Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          }
+        ]
+      },
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "quote",
+            "label": "Review Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "avatar",
+            "label": "User Avatar"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "User Name",
+            "default": "Name"
+          },
+          {
+            "type": "text",
+            "id": "date",
+            "label": "Date",
+            "default": "December 2025"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Reviews UGC",
+        "blocks": [
+          { "type": "ugc_item" },
+          { "type": "ugc_item" },
+          { "type": "ugc_item" },
+          { "type": "ugc_item" },
+          { "type": "ugc_item" },
+          { "type": "review" },
+          { "type": "review" },
+          { "type": "review" },
+          { "type": "review" },
+          { "type": "review" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

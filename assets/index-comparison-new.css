@@ -1,0 +1,234 @@
+.Index_comparison_main_new {
+  background: #fff;
+  padding: 60px 24px;
+}
+
+.Index_comparison_inner_new {
+  max-width: 1232px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.Index_comparison_header_new {
+  text-align: center;
+}
+
+.Index_comparison_header_small_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 10px 0;
+}
+
+.Index_comparison_header_large_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #000;
+  letter-spacing: -1.8px;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Index_comparison_problem_new {
+  text-align: center;
+  max-width: 992px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.Index_comparison_problem_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.Index_comparison_problem_icons_new {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 42px;
+}
+
+.Index_comparison_problem_icon_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.Index_comparison_problem_icon_img_wrap_new {
+  width: 64px;
+  height: 64px;
+}
+
+.Index_comparison_problem_icon_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Index_comparison_problem_icon_label_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  margin: 0;
+}
+
+.Index_comparison_problem_desc_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.Index_comparison_solution_new {
+  display: flex;
+  gap: 42px;
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.Index_comparison_solution_image_new {
+  flex: 1;
+  min-height: 400px;
+}
+
+.Index_comparison_solution_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Index_comparison_solution_content_new {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.Index_comparison_solution_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.Index_comparison_solution_intro_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.Index_comparison_solution_checklist_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Index_comparison_solution_check_new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Index_comparison_solution_check_icon_new {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.Index_comparison_solution_check_text_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.Index_comparison_solution_divider_new {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.Index_comparison_solution_desc_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.Index_comparison_solution_button_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 51px;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+
+.Index_comparison_solution_button_new:hover {
+  opacity: 0.85;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .Index_comparison_header_large_new {
+    font-size: 28px;
+  }
+
+  .Index_comparison_problem_icons_new {
+    gap: 24px;
+  }
+
+  .Index_comparison_problem_icon_label_new {
+    font-size: 11px;
+  }
+
+  .Index_comparison_solution_new {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .Index_comparison_solution_image_new {
+    min-height: 300px;
+  }
+
+  .Index_comparison_solution_content_new {
+    gap: 24px;
+  }
+}

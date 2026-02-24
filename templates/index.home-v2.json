@@ -1,0 +1,269 @@
+{
+  "sections": {
+    "banner_slider": {
+      "type": "Index-banner-slider-new",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "heading": "Premium Snow Goggles",
+            "subtitle": "With instant tint control.",
+            "button_text": "SHOP AROZA",
+            "button_link": "/products/aroza-first-goggles-with-instant-electronic-tint-control"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "heading": "Color-changing Sunglasses",
+            "subtitle": "One frame. Four colors. Instant transformation.",
+            "button_text": "SHOP AURA",
+            "button_link": "/products/aura-calm-black-gold-instant-color-changing-sunglasses"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "heading": "Smart Sport Glasses",
+            "subtitle": "Sound and shade, built to move.",
+            "button_text": "GET THE Gold Music Shield",
+            "button_link": "/products/music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses"
+          }
+        }
+      },
+      "block_order": ["slide_1", "slide_2", "slide_3"],
+      "settings": {
+        "quote_text": "\"These aren't ordinary sunglasses. These are epic.\"",
+        "quote_logo_text": ""
+      }
+    },
+    "bestsellers": {
+      "type": "Index-bestsellers-cards-new",
+      "settings": {
+        "heading_small": "Shop OUR",
+        "heading_large": "Bestsellers",
+        "collection": "best-sellers",
+        "products_to_show": 4
+      }
+    },
+    "collections": {
+      "type": "Index-collection-cards-new",
+      "blocks": {
+        "collection_1": {
+          "type": "collection_card",
+          "settings": {
+            "title": "Sport",
+            "link": "/collections/shop-all#sport"
+          }
+        },
+        "collection_2": {
+          "type": "collection_card",
+          "settings": {
+            "title": "Lifestyle",
+            "link": "/collections/shop-all#lifestyle"
+          }
+        },
+        "collection_3": {
+          "type": "collection_card",
+          "settings": {
+            "title": "Prismatic",
+            "link": "/collections/shop-all#prismatic"
+          }
+        }
+      },
+      "block_order": ["collection_1", "collection_2", "collection_3"],
+      "settings": {
+        "heading_small": "Shop by",
+        "heading_large": "Collections",
+        "subtitle": "Not sure which one's right for you?",
+        "button_text": "Shop all styles",
+        "button_link": "/collections/shop-all"
+      }
+    },
+    "comparison": {
+      "type": "Index-comparison-new",
+      "blocks": {
+        "competitor_1": {
+          "type": "competitor",
+          "settings": {
+            "label": "TRANSITION SUNGLASSES"
+          }
+        },
+        "competitor_2": {
+          "type": "competitor",
+          "settings": {
+            "label": "SMART SUNGLASSES"
+          }
+        },
+        "competitor_3": {
+          "type": "competitor",
+          "settings": {
+            "label": "REGULAR SUNGLASSES"
+          }
+        },
+        "check_1": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "Adjustable tint"
+          }
+        },
+        "check_2": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "Change color with a tap"
+          }
+        },
+        "check_3": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "Instantly change the lens color"
+          }
+        },
+        "check_4": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "Works in all light conditions"
+          }
+        },
+        "check_5": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "App-enabled controls"
+          }
+        },
+        "check_6": {
+          "type": "checklist_item",
+          "settings": {
+            "text": "IPX4 water resistant"
+          }
+        }
+      },
+      "block_order": ["competitor_1", "competitor_2", "competitor_3", "check_1", "check_2", "check_3", "check_4", "check_5", "check_6"],
+      "settings": {
+        "heading_small": "Us vs the rest",
+        "heading_large": "See beyond the ordinary",
+        "problem_heading": "THE PROBLEM WITH OTHER SUNGLASSES",
+        "problem_description": "A short description about the other glasses.",
+        "solution_heading": "OUR SOLUTION",
+        "solution_intro": "With Prismatic™ Color-changing Lenses you can effortlessly switch between four different hues, all with a simple touch.",
+        "solution_description": "Chamelo leverages liquid crystal film technology to create next-generation smart eyewear. All our eyewear changes tint or color instantly, either manually, automatically or both. Whether navigating the bright conditions of an outdoor adventure or looking to elevate your personal style, we've got a pair for you.",
+        "button_text": "SHOP ALL PRODUCTS",
+        "button_link": "/collections/shop-all"
+      }
+    },
+    "technology": {
+      "type": "Index-technology-cta-new",
+      "settings": {
+        "subtitle": "CHAMELO INNOVATION",
+        "heading": "Where Vision Meets Technology",
+        "description": "At Chamelo, our goal is to pioneer a new era in the eyewear industry by fusing state-of-the-art technology with cutting-edge style. All our eyewear changes tint or color instantly, either manually, automatically or both. We empower wearers to see beyond 20/20, revolutionizing the way people experience the world.",
+        "button_text": "LEARN MORE",
+        "button_link": "/pages/innovation"
+      }
+    },
+    "press_cards": {
+      "type": "Index-press-cards-new",
+      "blocks": {
+        "press_1": {
+          "type": "image_card",
+          "settings": {}
+        },
+        "press_2": {
+          "type": "quote_card",
+          "settings": {
+            "quote": "With a commitment to pushing boundaries and redefining the eyewear landscape, Chamelo is poised to revolutionize the industry.",
+            "button_text": "READ NOTE",
+            "button_link": "/"
+          }
+        },
+        "press_3": {
+          "type": "quote_card",
+          "settings": {
+            "quote": "Former NBA All-Star Stephon Marbury is looking to revolutionize the eyewear industry with a new brand rooted in technology.",
+            "button_text": "READ NOTE",
+            "button_link": "/"
+          }
+        },
+        "press_4": {
+          "type": "quote_card",
+          "settings": {
+            "quote": "They're a unique and innovative piece of gear...it could make some waves in the eyewear industry.",
+            "button_text": "READ NOTE",
+            "button_link": "/"
+          }
+        }
+      },
+      "block_order": ["press_1", "press_2", "press_3", "press_4"],
+      "settings": {
+        "heading_small": "CHAMELO SPOTLIGHT",
+        "heading_large": "From The Press"
+      }
+    },
+    "reviews_ugc": {
+      "type": "Index-reviews-ugc-new",
+      "settings": {
+        "heading_small": "THOUSANDS OF TRUSTED REVIEWS",
+        "heading_large": "From People Like You",
+        "cta_text": "Ready to choose your right set?",
+        "button_text": "VIEW ALL PRODUCTS",
+        "button_link": "/collections/shop-all"
+      }
+    },
+    "promise_product": {
+      "type": "Index-promise-product-new",
+      "blocks": {
+        "badge_1": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "30-DAY GUARANTEE"
+          }
+        },
+        "badge_2": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "1-YEAR WARRANTY"
+          }
+        },
+        "badge_3": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "FAST, FREE SHIPPING"
+          }
+        },
+        "badge_4": {
+          "type": "trust_badge",
+          "settings": {
+            "text": "A+ CUSTOMER SERVICE"
+          }
+        }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
+      "settings": {
+        "heading_small": "OUR PROMISE",
+        "heading_large": "Upgrade your shades with confidence",
+        "button_text": "SHOP ALL PRODUCTS",
+        "button_link": "/collections/shop-all"
+      }
+    },
+    "community": {
+      "type": "Index-community-instagram-new",
+      "settings": {
+        "heading_small": "JOIN THE COMMUNITY",
+        "heading_large": "Say hello to chamelo",
+        "button_text": "FOLLOW @HELLOCHAMELO",
+        "button_link": "https://www.instagram.com/hellochamelo/"
+      }
+    }
+  },
+  "order": [
+    "banner_slider",
+    "bestsellers",
+    "collections",
+    "comparison",
+    "technology",
+    "press_cards",
+    "reviews_ugc",
+    "promise_product",
+    "community"
+  ]
+}

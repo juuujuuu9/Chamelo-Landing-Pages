@@ -1,0 +1,276 @@
+.Index_promise_product_main_new {
+  background: #f5f5f5;
+  padding: 60px 24px;
+}
+
+.Index_promise_product_inner_new {
+  max-width: 1232px;
+  margin: 0 auto;
+  display: flex;
+  gap: 42px;
+  align-items: flex-start;
+}
+
+.Index_promise_product_left_new {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.Index_promise_product_header_new {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Index_promise_product_header_small_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.Index_promise_product_header_large_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #000;
+  letter-spacing: -1.8px;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Index_promise_product_badges_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Index_promise_product_badge_new {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.Index_promise_product_badge_icon_new {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.Index_promise_product_badge_icon_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Index_promise_product_badge_text_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.Index_promise_product_badge_desc_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.Index_promise_product_badge_divider_new {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.Index_promise_product_cta_button_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  height: 52px;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.Index_promise_product_cta_button_new:hover {
+  opacity: 0.85;
+  color: #fff;
+}
+
+.Index_promise_product_right_new {
+  flex: 1;
+  max-width: 480px;
+}
+
+.Index_promise_product_card_new {
+  background: #fff;
+  overflow: hidden;
+}
+
+.Index_promise_product_card_image_new {
+  padding: 24px;
+}
+
+.Index_promise_product_card_image_static_new {
+  padding: 0;
+}
+
+.Index_promise_product_card_img_new {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Index_promise_product_card_details_new {
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Index_promise_product_card_info_new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Index_promise_product_card_rating_new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Index_promise_product_card_stars_new {
+  display: flex;
+  gap: 2px;
+}
+
+.Index_promise_product_card_rating_count_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 12px;
+  color: #000;
+}
+
+.Index_promise_product_card_name_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.Index_promise_product_card_name_new:hover {
+  text-decoration: underline;
+}
+
+.Index_promise_product_card_price_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  letter-spacing: 0.75px;
+  margin: 0;
+}
+
+.Index_promise_product_card_variants_new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Index_promise_product_card_color_label_new {
+  display: flex;
+  gap: 4px;
+}
+
+.Index_promise_product_card_color_title_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.Index_promise_product_card_variant_thumbs_new {
+  display: flex;
+  gap: 8px;
+}
+
+.Index_promise_product_card_variant_thumb_new {
+  width: 48px;
+  height: 34px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.Index_promise_product_card_variant_thumb_new.active {
+  border-color: #000;
+}
+
+.Index_promise_product_card_variant_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Index_promise_product_card_view_btn_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.Index_promise_product_card_view_btn_new:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .Index_promise_product_inner_new {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .Index_promise_product_right_new {
+    max-width: 100%;
+  }
+
+  .Index_promise_product_header_large_new {
+    font-size: 28px;
+  }
+
+  .Index_promise_product_cta_button_new {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,143 @@
+.Index_press_cards_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Index_press_cards_header_new {
+  padding: 0 24px 40px 24px;
+}
+
+.Index_press_cards_header_small_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 10px 0;
+}
+
+.Index_press_cards_header_large_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #000;
+  letter-spacing: -1.8px;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Index_press_cards_swiper_new {
+  padding: 0 24px 0 42px;
+  overflow: hidden;
+}
+
+.Index_press_cards_slide_new {
+  width: 352px;
+  height: auto;
+}
+
+.Index_press_cards_card_new {
+  width: 316px;
+  height: 480px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.Index_press_cards_card_image_new {
+  border: none;
+}
+
+.Index_press_cards_card_bg_new {
+  position: absolute;
+  inset: 0;
+}
+
+.Index_press_cards_card_bg_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Index_press_cards_card_content_new {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px;
+}
+
+.Index_press_cards_card_top_new {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.Index_press_cards_card_quote_icon_new {
+  position: absolute;
+  left: -24px;
+  top: 24px;
+  opacity: 0.3;
+}
+
+.Index_press_cards_card_logo_new {
+  height: 39px;
+  width: fit-content;
+}
+
+.Index_press_cards_card_logo_img_new {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.Index_press_cards_card_quote_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.Index_press_cards_card_button_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.Index_press_cards_card_button_new:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .Index_press_cards_swiper_new {
+    padding: 0 12px 0 12px;
+  }
+
+  .Index_press_cards_slide_new {
+    width: 316px;
+  }
+
+  .Index_press_cards_header_large_new {
+    font-size: 28px;
+  }
+}

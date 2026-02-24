@@ -1,0 +1,53 @@
+---
+description: Shopify theme deployment safety - only push landing page files, never touch existing theme files
+alwaysApply: true
+---
+
+# Shopify Deploy Safety
+
+This repo is a live Shopify production theme. When pushing to Shopify, ONLY push files that belong to the new landing pages we are building. Never push unrelated files.
+
+## Allowed files for push
+
+Only the following files may be pushed to Shopify:
+
+### Templates
+- `templates/index.home-v2.json`
+
+### Sections (new landing page sections only)
+- `sections/Index-banner-slider-new.liquid`
+- `sections/Index-bestsellers-cards-new.liquid`
+- `sections/Index-collection-cards-new.liquid`
+- `sections/Index-community-instagram-new.liquid`
+- `sections/Index-comparison-new.liquid`
+- `sections/Index-press-cards-new.liquid`
+- `sections/Index-promise-product-new.liquid`
+- `sections/Index-reviews-ugc-new.liquid`
+- `sections/Index-technology-cta-new.liquid`
+
+### Assets (CSS for new sections only)
+- `assets/index-banner-slider-new.css`
+- `assets/index-bestsellers-cards-new.css`
+- `assets/index-collection-cards-new.css`
+- `assets/index-community-instagram-new.css`
+- `assets/index-comparison-new.css`
+- `assets/index-press-cards-new.css`
+- `assets/index-promise-product-new.css`
+- `assets/index-reviews-ugc-new.css`
+- `assets/index-technology-cta-new.css`
+
+## Rules
+
+1. **NEVER modify or push** `templates/index.json` -- this is the live A/B test control
+2. **NEVER modify or push** existing sections, snippets, assets, layout, or config files
+3. **NEVER modify** `layout/theme.liquid`, `config/settings_data.json`, or any other shared theme files
+4. When adding new landing page sections or assets in the future, add them to the allowed list above
+5. If a Shopify CLI command would push the entire theme, use `--only` flags to limit to allowed files
+6. Always verify the push scope before executing any deploy command
+
+## Push command pattern
+
+```bash
+# Push only specific landing page files
+shopify theme push --only templates/index.home-v2.json --only sections/Index-banner-slider-new.liquid --only assets/index-banner-slider-new.css [... etc]
+```

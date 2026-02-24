@@ -1,0 +1,91 @@
+{{ 'index-technology-cta-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Index_technology_cta_main_new">
+  {%- if section.settings.background_image != blank -%}
+    <div class="Index_technology_cta_bg_new">
+      {{
+        section.settings.background_image |
+        image_url: width: 1920 |
+        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944',
+        fetchpriority: 'auto',
+        class: 'Index_technology_cta_bg_img_new'
+      }}
+    </div>
+  {%- endif -%}
+  {%- if section.settings.background_video != blank -%}
+    <div class="Index_technology_cta_bg_new">
+      {{ section.settings.background_video | video_tag: class: 'Index_technology_cta_bg_vid_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+    </div>
+  {%- endif -%}
+  <div class="Index_technology_cta_inner_new">
+    <div class="Index_technology_cta_content_new">
+      {%- if section.settings.subtitle != blank -%}
+        <p class="Index_technology_cta_subtitle_new">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="Index_technology_cta_heading_new">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="Index_technology_cta_description_new">{{ section.settings.description }}</p>
+      {%- endif -%}
+      {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+        <a href="{{ section.settings.button_link }}" class="Index_technology_cta_button_new">
+          <span>{{ section.settings.button_text }}</span>
+          <span class="Index_technology_cta_button_underline_new"></span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Index Technology CTA",
+    "class": "Index_technology_cta_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "CHAMELO INNOVATION"
+      },
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Where Vision Meets Technology"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "LEARN MORE"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "video",
+        "id": "background_video",
+        "label": "Background Video"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Technology CTA"
+      }
+    ]
+  }
+{% endschema %}

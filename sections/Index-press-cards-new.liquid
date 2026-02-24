@@ -1,0 +1,163 @@
+{{ 'index-press-cards-new.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="Index_press_cards_main_new">
+    <div class="Index_press_cards_header_new">
+      {%- if section.settings.heading_small != blank -%}
+        <p class="Index_press_cards_header_small_new">{{ section.settings.heading_small }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading_large != blank -%}
+        <h2 class="Index_press_cards_header_large_new">{{ section.settings.heading_large }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="Index_press_cards_swiper_new swiper" id="press-cards-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="swiper-slide Index_press_cards_slide_new" {{ block.shopify_attributes }}>
+            <div class="Index_press_cards_card_new {% if block.type == 'image_card' %}Index_press_cards_card_image_new{% endif %}">
+              {%- if block.type == 'image_card' -%}
+                {%- if block.settings.image != blank -%}
+                  <div class="Index_press_cards_card_bg_new">
+                    {{
+                      block.settings.image |
+                      image_url: width: 700 |
+                      image_tag: widths: '350, 500, 700',
+                      fetchpriority: 'auto',
+                      class: 'Index_press_cards_card_bg_img_new'
+                    }}
+                  </div>
+                {%- endif -%}
+              {%- else -%}
+                <div class="Index_press_cards_card_content_new">
+                  <div class="Index_press_cards_card_top_new">
+                    <div class="Index_press_cards_card_quote_icon_new">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 24C8 20 10 16 16 12L18 15C14 17 13 19 13 21H17V28H8V24ZM22 24C22 20 24 16 30 12L32 15C28 17 27 19 27 21H31V28H22V24Z" fill="rgba(0,0,0,0.1)"/>
+                      </svg>
+                    </div>
+                    {%- if block.settings.logo != blank -%}
+                      <div class="Index_press_cards_card_logo_new">
+                        {{
+                          block.settings.logo |
+                          image_url: width: 334 |
+                          image_tag: widths: '167, 334',
+                          fetchpriority: 'auto',
+                          class: 'Index_press_cards_card_logo_img_new'
+                        }}
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.quote != blank -%}
+                      <p class="Index_press_cards_card_quote_new">"{{ block.settings.quote }}"</p>
+                    {%- endif -%}
+                  </div>
+                  {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
+                    <a href="{{ block.settings.button_link }}" class="Index_press_cards_card_button_new">
+                      {{ block.settings.button_text }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('#press-cards-{{ section.id }}', {
+          slidesPerView: 1.15,
+          spaceBetween: 12,
+          centeredSlides: false,
+          breakpoints: {
+            769: {
+              slidesPerView: 3.5,
+              spaceBetween: 0
+            }
+          }
+        });
+      }
+    });
+  </script>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Press Cards",
+    "class": "Index_press_cards_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Small Heading",
+        "default": "CHAMELO SPOTLIGHT"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Large Heading",
+        "default": "From The Press"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_card",
+        "name": "Image Card",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Card Image"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Card Link"
+          }
+        ]
+      },
+      {
+        "type": "quote_card",
+        "name": "Quote Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Publication Logo"
+          },
+          {
+            "type": "textarea",
+            "id": "quote",
+            "label": "Quote Text"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "READ NOTE"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Press Cards",
+        "blocks": [
+          { "type": "image_card" },
+          { "type": "quote_card" },
+          { "type": "quote_card" },
+          { "type": "quote_card" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

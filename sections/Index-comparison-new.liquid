@@ -1,0 +1,217 @@
+{{ 'index-comparison-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Index_comparison_main_new">
+  <div class="Index_comparison_inner_new">
+    <div class="Index_comparison_header_new">
+      {%- if section.settings.heading_small != blank -%}
+        <p class="Index_comparison_header_small_new">{{ section.settings.heading_small }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading_large != blank -%}
+        <h2 class="Index_comparison_header_large_new">{{ section.settings.heading_large }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="Index_comparison_problem_new">
+      {%- if section.settings.problem_heading != blank -%}
+        <p class="Index_comparison_problem_heading_new">{{ section.settings.problem_heading }}</p>
+      {%- endif -%}
+
+      {%- assign competitors = section.blocks | where: 'type', 'competitor' -%}
+      {%- if competitors.size > 0 -%}
+        <div class="Index_comparison_problem_icons_new">
+          {%- for block in competitors -%}
+            <div class="Index_comparison_problem_icon_new" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <div class="Index_comparison_problem_icon_img_wrap_new">
+                  {{
+                    block.settings.icon |
+                    image_url: width: 128 |
+                    image_tag: widths: '64, 128',
+                    fetchpriority: 'auto',
+                    class: 'Index_comparison_problem_icon_img_new'
+                  }}
+                </div>
+              {%- else -%}
+                <div class="Index_comparison_problem_icon_img_wrap_new Index_comparison_problem_icon_placeholder_new">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="4" fill="#f0f0f0"/>
+                    <path d="M16 38L26 28L32 34L42 24L48 30" stroke="#999" stroke-width="2" fill="none"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.label != blank -%}
+                <p class="Index_comparison_problem_icon_label_new">{{ block.settings.label }}</p>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.problem_description != blank -%}
+        <p class="Index_comparison_problem_desc_new">{{ section.settings.problem_description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="Index_comparison_solution_new">
+      <div class="Index_comparison_solution_image_new">
+        {%- if section.settings.solution_image != blank -%}
+          {{
+            section.settings.solution_image |
+            image_url: width: 950 |
+            image_tag: widths: '475, 700, 950',
+            fetchpriority: 'auto',
+            class: 'Index_comparison_solution_img_new'
+          }}
+        {%- endif -%}
+      </div>
+      <div class="Index_comparison_solution_content_new">
+        {%- if section.settings.solution_heading != blank -%}
+          <p class="Index_comparison_solution_heading_new">{{ section.settings.solution_heading }}</p>
+        {%- endif -%}
+        {%- if section.settings.solution_intro != blank -%}
+          <p class="Index_comparison_solution_intro_new">{{ section.settings.solution_intro }}</p>
+        {%- endif -%}
+
+        {%- assign checks = section.blocks | where: 'type', 'checklist_item' -%}
+        {%- if checks.size > 0 -%}
+          <div class="Index_comparison_solution_checklist_new">
+            {%- for block in checks -%}
+              <div class="Index_comparison_solution_check_new" {{ block.shopify_attributes }}>
+                <div class="Index_comparison_solution_check_icon_new">
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="15" fill="#000"/>
+                    <path d="M9 15.5L13 19.5L21 11.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="Index_comparison_solution_check_text_new">{{ block.settings.text }}</p>
+              </div>
+              {%- unless forloop.last -%}
+                <div class="Index_comparison_solution_divider_new"></div>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.solution_description != blank -%}
+          <p class="Index_comparison_solution_desc_new">{{ section.settings.solution_description }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+          <a href="{{ section.settings.button_link }}" class="Index_comparison_solution_button_new">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Index Comparison",
+    "class": "Index_comparison_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Small Heading",
+        "default": "Us vs the rest"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Large Heading",
+        "default": "See beyond the ordinary"
+      },
+      {
+        "type": "text",
+        "id": "problem_heading",
+        "label": "Problem Heading",
+        "default": "THE PROBLEM WITH OTHER SUNGLASSES"
+      },
+      {
+        "type": "text",
+        "id": "problem_description",
+        "label": "Problem Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "solution_image",
+        "label": "Solution Image"
+      },
+      {
+        "type": "text",
+        "id": "solution_heading",
+        "label": "Solution Heading",
+        "default": "OUR SOLUTION"
+      },
+      {
+        "type": "textarea",
+        "id": "solution_intro",
+        "label": "Solution Intro Text"
+      },
+      {
+        "type": "textarea",
+        "id": "solution_description",
+        "label": "Solution Description"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "SHOP ALL PRODUCTS"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "competitor",
+        "name": "Competitor",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "SUNGLASSES"
+          }
+        ]
+      },
+      {
+        "type": "checklist_item",
+        "name": "Checklist Item",
+        "limit": 8,
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Feature"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Comparison",
+        "blocks": [
+          { "type": "competitor" },
+          { "type": "competitor" },
+          { "type": "competitor" },
+          { "type": "checklist_item" },
+          { "type": "checklist_item" },
+          { "type": "checklist_item" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

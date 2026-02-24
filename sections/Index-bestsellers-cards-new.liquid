@@ -1,0 +1,246 @@
+{{ 'index-bestsellers-cards-new.css' | asset_url | stylesheet_tag }}
+
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="Index_bestsellers_cards_main_new">
+  <div class="Index_bestsellers_cards_header_new">
+    {%- if section.settings.heading_small != blank -%}
+      <p class="Index_bestsellers_cards_header_small_new">{{ section.settings.heading_small }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading_large != blank -%}
+      <h2 class="Index_bestsellers_cards_header_large_new">{{ section.settings.heading_large }}</h2>
+    {%- endif -%}
+  </div>
+
+  {%- if collection != blank and collection.products.size > 0 -%}
+    <div class="Index_bestsellers_cards_swiper_new swiper" id="bestsellers-cards-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          <div class="swiper-slide Index_bestsellers_cards_slide_new">
+            <div class="Index_bestsellers_cards_card_new">
+              <div class="Index_bestsellers_cards_card_image_new">
+                {%- if product.featured_image != blank -%}
+                  <a href="{{ product.url }}">
+                    {{
+                      product.featured_image |
+                      image_url: width: 600 |
+                      image_tag: widths: '292, 400, 600',
+                      fetchpriority: 'auto',
+                      class: 'Index_bestsellers_cards_card_img_new'
+                    }}
+                  </a>
+                {%- endif -%}
+                <div class="Index_bestsellers_cards_card_dots_new">
+                  {%- for image in product.images limit: 4 -%}
+                    <span class="Index_bestsellers_cards_card_dot_new {% if forloop.first %}active{% endif %}"></span>
+                  {%- endfor -%}
+                </div>
+              </div>
+
+              <div class="Index_bestsellers_cards_card_details_new">
+                <div class="Index_bestsellers_cards_card_selector_new">
+                  <div class="Index_bestsellers_cards_card_selector_header_new">
+                    <div class="Index_bestsellers_cards_card_color_label_new">
+                      <span class="Index_bestsellers_cards_card_color_label_title_new">Frame Color</span>
+                      <span class="Index_bestsellers_cards_card_color_label_value_new">{{ product.selected_or_first_available_variant.title | split: ' / ' | first }}</span>
+                    </div>
+                    <a href="{{ product.url }}" class="Index_bestsellers_cards_card_sizefit_new">
+                      <span>Size and fit</span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="9" stroke="#000" stroke-width="1.5"/>
+                        <text x="10" y="14" text-anchor="middle" font-size="12" fill="#000">i</text>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="Index_bestsellers_cards_card_variants_new">
+                    {%- for variant in product.variants limit: 4 -%}
+                      <div class="Index_bestsellers_cards_card_variant_new {% if forloop.first %}active{% endif %}" data-variant-id="{{ variant.id }}">
+                        {%- if variant.featured_image != blank -%}
+                          {{
+                            variant.featured_image |
+                            image_url: width: 106 |
+                            image_tag: widths: '53, 106',
+                            fetchpriority: 'lazy',
+                            class: 'Index_bestsellers_cards_card_variant_img_new'
+                          }}
+                        {%- elsif variant.image != blank -%}
+                          {{
+                            variant.image |
+                            image_url: width: 106 |
+                            image_tag: widths: '53, 106',
+                            fetchpriority: 'lazy',
+                            class: 'Index_bestsellers_cards_card_variant_img_new'
+                          }}
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+
+                <div class="Index_bestsellers_cards_card_info_new">
+                  <div class="Index_bestsellers_cards_card_rating_new">
+                    <div class="Index_bestsellers_cards_card_stars_new">
+                      {%- for i in (1..5) -%}
+                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.5 0L8.16 4.08L12.6 4.58L9.3 7.52L10.18 11.88L6.5 9.77L2.82 11.88L3.7 7.52L0.4 4.58L4.84 4.08L6.5 0Z" fill="#000"/>
+                        </svg>
+                      {%- endfor -%}
+                    </div>
+                    <span class="Index_bestsellers_cards_card_rating_count_new">
+                      ({{ product.metafields.reviews.rating_count | default: '0' }})
+                    </span>
+                  </div>
+                  <a href="{{ product.url }}" class="Index_bestsellers_cards_card_name_new">{{ product.title }}</a>
+                  <p class="Index_bestsellers_cards_card_price_new">{{ product.price | money }}</p>
+                  {%- if product.metafields.custom.product_tagline != blank -%}
+                    <p class="Index_bestsellers_cards_card_tagline_new">{{ product.metafields.custom.product_tagline }}</p>
+                  {%- elsif product.description != blank -%}
+                    <p class="Index_bestsellers_cards_card_tagline_new">{{ product.description | strip_html | truncate: 60 }}</p>
+                  {%- endif -%}
+                </div>
+
+                {%- if product.tags contains 'audio-option' or product.metafields.custom.has_audio_option -%}
+                  <div class="Index_bestsellers_cards_card_audio_new">
+                    <p class="Index_bestsellers_cards_card_audio_label_new">AUDIO</p>
+                    <div class="Index_bestsellers_cards_card_audio_toggle_new">
+                      <button class="Index_bestsellers_cards_card_audio_btn_new active" data-audio="with">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+                          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="currentColor"/>
+                        </svg>
+                        <span>With Audio</span>
+                      </button>
+                      <button class="Index_bestsellers_cards_card_audio_btn_new" data-audio="without">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63z" fill="currentColor"/>
+                          <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor" opacity="0.5"/>
+                          <line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>Without Audio</span>
+                      </button>
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                <div class="Index_bestsellers_cards_card_purchase_new">
+                  <div class="Index_bestsellers_cards_card_addtocart_new">
+                    <div class="Index_bestsellers_cards_card_qty_new">
+                      <button class="Index_bestsellers_cards_card_qty_btn_new" data-action="decrease">-</button>
+                      <input type="number" class="Index_bestsellers_cards_card_qty_input_new" value="1" min="1" max="10" readonly>
+                      <button class="Index_bestsellers_cards_card_qty_btn_new" data-action="increase">+</button>
+                    </div>
+                    <button class="Index_bestsellers_cards_card_atc_btn_new" data-variant-id="{{ product.selected_or_first_available_variant.id }}" data-product-url="{{ product.url }}">
+                      ADD TO CART
+                    </button>
+                  </div>
+                  <a href="{{ product.url }}?prescription=true" class="Index_bestsellers_cards_card_rx_new">
+                    <span class="Index_bestsellers_cards_card_rx_line_new"></span>
+                    <span>ADD PRESCRIPTION LENSES</span>
+                    <span class="Index_bestsellers_cards_card_rx_line_new"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#bestsellers-cards-{{ section.id }}', {
+        slidesPerView: 1.05,
+        spaceBetween: 0,
+        breakpoints: {
+          769: {
+            slidesPerView: 3.5,
+            spaceBetween: 0
+          }
+        }
+      });
+    }
+
+    var section = document.querySelector('#shopify-section-{{ section.id }}');
+    if (!section) return;
+
+    section.querySelectorAll('.Index_bestsellers_cards_card_qty_btn_new').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var input = this.parentNode.querySelector('.Index_bestsellers_cards_card_qty_input_new');
+        var val = parseInt(input.value);
+        if (this.dataset.action === 'increase' && val < 10) input.value = val + 1;
+        if (this.dataset.action === 'decrease' && val > 1) input.value = val - 1;
+      });
+    });
+
+    section.querySelectorAll('.Index_bestsellers_cards_card_atc_btn_new').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = this.closest('.Index_bestsellers_cards_card_new');
+        var qty = parseInt(card.querySelector('.Index_bestsellers_cards_card_qty_input_new').value);
+        var variantId = this.dataset.variantId;
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ items: [{ id: parseInt(variantId), quantity: qty }] })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function() {
+          document.dispatchEvent(new CustomEvent('cart:refresh'));
+          var cartDrawer = document.querySelector('cart-drawer');
+          if (cartDrawer && typeof cartDrawer.open === 'function') cartDrawer.open();
+        });
+      });
+    });
+
+    section.querySelectorAll('.Index_bestsellers_cards_card_audio_btn_new').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var container = this.closest('.Index_bestsellers_cards_card_audio_toggle_new');
+        container.querySelectorAll('.Index_bestsellers_cards_card_audio_btn_new').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Index Bestsellers Cards",
+    "class": "Index_bestsellers_cards_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Small Heading",
+        "default": "Shop OUR"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Large Heading",
+        "default": "Bestsellers"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "products_to_show",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "default": 4,
+        "label": "Products to show"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Bestsellers Cards"
+      }
+    ]
+  }
+{% endschema %}

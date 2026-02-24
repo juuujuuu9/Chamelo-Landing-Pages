@@ -1,0 +1,38 @@
+# Ignore everything by default (this is the full Shopify theme)
+*
+
+# Allow landing page templates
+!templates/index.home-v2.json
+
+# Allow new landing page sections
+!sections/Index-banner-slider-new.liquid
+!sections/Index-bestsellers-cards-new.liquid
+!sections/Index-collection-cards-new.liquid
+!sections/Index-community-instagram-new.liquid
+!sections/Index-comparison-new.liquid
+!sections/Index-press-cards-new.liquid
+!sections/Index-promise-product-new.liquid
+!sections/Index-reviews-ugc-new.liquid
+!sections/Index-technology-cta-new.liquid
+
+# Allow new landing page CSS
+!assets/index-banner-slider-new.css
+!assets/index-bestsellers-cards-new.css
+!assets/index-collection-cards-new.css
+!assets/index-community-instagram-new.css
+!assets/index-comparison-new.css
+!assets/index-press-cards-new.css
+!assets/index-promise-product-new.css
+!assets/index-reviews-ugc-new.css
+!assets/index-technology-cta-new.css
+
+# Allow cursor rules and project config
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/*.mdc
+!.gitignore
+
+# Allow parent directories (required for nested allowlisting)
+!templates/
+!sections/
+!assets/

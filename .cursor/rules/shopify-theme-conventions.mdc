@@ -1,0 +1,29 @@
+---
+description: Shopify Liquid theme coding conventions for Chamelo
+globs: sections/**/*.liquid, snippets/**/*.liquid, assets/**/*.css
+alwaysApply: false
+---
+
+# Chamelo Shopify Theme Conventions
+
+## Naming
+- Section files: `Index-<feature-name>-new.liquid` (PascalCase feature, kebab-case file)
+- CSS classes: `Index_<feature>_<element>_new` (underscore-separated, `_new` suffix)
+- CSS files: `index-<feature-name>-new.css` (lowercase kebab)
+- Responsive classes: `Desktop_only_new`, `Mobile_only_new`
+
+## Section structure
+1. CSS link tag at top: `{{ 'filename.css' | asset_url | stylesheet_tag }}`
+2. HTML body with `{%- if -%}` blank-checks on all settings
+3. Inline `<script>` for Swiper/JS initialization at bottom
+4. `{% schema %}` block at end with `name`, `class`, `settings`, `blocks`, `presets`
+
+## CSS patterns
+- Use `var(--font-heading-family)` and `var(--font-body-family)` for fonts
+- Mobile breakpoint: `@media screen and (max-width: 768px)`
+- Use Swiper.js for carousels (already loaded globally)
+- Image tags use Shopify's `image_url` + `image_tag` filters with `widths` param
+
+## Important
+- Keep `index.json` untouched (live A/B control)
+- New landing page work goes in `index.home-v2.json` and its associated sections/assets
