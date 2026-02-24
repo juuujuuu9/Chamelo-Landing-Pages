@@ -1,7 +1,7 @@
 {
   "sections": {
     "hero": {
-      "type": "Aroza-hero-new",
+      "type": "aroza-hero-new",
       "settings": {
         "heading": "Premium Snow Goggles",
         "subtitle": "With instant tint control.",
@@ -12,7 +12,7 @@
       }
     },
     "product_info": {
-      "type": "Aroza-product-info-new",
+      "type": "aroza-product-info-new",
       "settings": {
         "product": "aroza-first-goggles-with-instant-electronic-tint-control",
         "show_virtual_tryon": true,
@@ -26,7 +26,7 @@
       }
     },
     "stats": {
-      "type": "Aroza-stats-new",
+      "type": "aroza-stats-new",
       "blocks": {
         "stat_1": {
           "type": "stat",
@@ -53,21 +53,21 @@
       "block_order": ["stat_1", "stat_2", "stat_3"]
     },
     "reviews": {
-      "type": "Aroza-reviews-new",
+      "type": "aroza-reviews-new",
       "settings": {
         "heading": "Real Chamelo Love",
         "collection": "aroza-reviews"
       }
     },
     "collections": {
-      "type": "Aroza-collections-new",
+      "type": "aroza-collections-new",
       "settings": {
         "heading": "Effortlessly Switch Up Your Style",
         "collection": "all-products"
       }
     },
     "features": {
-      "type": "Aroza-features-new",
+      "type": "aroza-features-new",
       "settings": {
         "heading_small": "CHAMELO INNOVATION",
         "heading_large": "Adjusts For Every Mood",
@@ -77,7 +77,7 @@
       }
     },
     "community": {
-      "type": "Aroza-community-new",
+      "type": "aroza-community-new",
       "settings": {
         "heading_small": "JOIN THE COMMUNITY",
         "heading_large": "Say hello to chamelo",
@@ -86,7 +86,7 @@
       }
     },
     "newsletter": {
-      "type": "Aroza-newsletter-new",
+      "type": "aroza-newsletter-new",
       "settings": {
         "heading": "Stay in the loop",
         "description": "Get the latest updates on new releases, exclusive offers, and Chamelo news.",

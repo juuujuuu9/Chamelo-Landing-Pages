@@ -17,14 +17,14 @@
 !sections/Index-technology-cta-new.liquid
 
 # Allow new landing page sections - AROZA v2
-!sections/Aroza-hero-new.liquid
-!sections/Aroza-product-info-new.liquid
-!sections/Aroza-stats-new.liquid
-!sections/Aroza-reviews-new.liquid
-!sections/Aroza-collections-new.liquid
-!sections/Aroza-features-new.liquid
-!sections/Aroza-community-new.liquid
-!sections/Aroza-newsletter-new.liquid
+!sections/aroza-hero-new.liquid
+!sections/aroza-product-info-new.liquid
+!sections/aroza-stats-new.liquid
+!sections/aroza-reviews-new.liquid
+!sections/aroza-collections-new.liquid
+!sections/aroza-features-new.liquid
+!sections/aroza-community-new.liquid
+!sections/aroza-newsletter-new.liquid
 
 # Allow new landing page CSS - Home v2
 !assets/index-banner-slider-new.css
