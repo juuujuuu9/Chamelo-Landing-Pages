@@ -4,6 +4,7 @@
 # Allow landing page templates
 !templates/index.home-v2.json
 !templates/product.aroza-v2.json
+!templates/product.aura-v2.json
 
 # Allow new landing page sections - Home v2
 !sections/Index-banner-slider-new.liquid
@@ -26,6 +27,19 @@
 !sections/aroza-community-new.liquid
 !sections/aroza-newsletter-new.liquid
 
+# Allow new landing page sections - AURA v2
+!sections/aura-hero-new.liquid
+!sections/aura-product-info-new.liquid
+!sections/aura-stats-new.liquid
+!sections/aura-features-accordion-new.liquid
+!sections/aura-reviews-new.liquid
+!sections/aura-press-new.liquid
+!sections/aura-technology-new.liquid
+!sections/aura-collections-new.liquid
+!sections/aura-community-new.liquid
+!sections/aura-faq-new.liquid
+!sections/aura-newsletter-new.liquid
+
 # Allow new landing page CSS - Home v2
 !assets/index-banner-slider-new.css
 !assets/index-bestsellers-cards-new.css
@@ -46,6 +60,19 @@
 !assets/aroza-features-new.css
 !assets/aroza-community-new.css
 !assets/aroza-newsletter-new.css
+
+# Allow new landing page CSS - AURA v2
+!assets/aura-hero-new.css
+!assets/aura-product-info-new.css
+!assets/aura-stats-new.css
+!assets/aura-features-accordion-new.css
+!assets/aura-reviews-new.css
+!assets/aura-press-new.css
+!assets/aura-technology-new.css
+!assets/aura-collections-new.css
+!assets/aura-community-new.css
+!assets/aura-faq-new.css
+!assets/aura-newsletter-new.css
 
 # Allow docs (e.g. dev plans)
 !docs/

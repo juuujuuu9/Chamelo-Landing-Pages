@@ -14,6 +14,7 @@ Only the following files may be pushed to Shopify:
 ### Templates
 - `templates/index.home-v2.json` (Home v2 landing page)
 - `templates/product.aroza-v2.json` (AROZA product landing page)
+- `templates/product.aura-v2.json` (AURA product landing page)
 
 ### Sections (new landing page sections only)
 - `sections/Index-banner-slider-new.liquid` (Home v2)
@@ -33,6 +34,17 @@ Only the following files may be pushed to Shopify:
 - `sections/aroza-features-new.liquid` (AROZA)
 - `sections/aroza-community-new.liquid` (AROZA)
 - `sections/aroza-newsletter-new.liquid` (AROZA)
+- `sections/aura-hero-new.liquid` (AURA)
+- `sections/aura-product-info-new.liquid` (AURA)
+- `sections/aura-stats-new.liquid` (AURA)
+- `sections/aura-features-accordion-new.liquid` (AURA)
+- `sections/aura-reviews-new.liquid` (AURA)
+- `sections/aura-press-new.liquid` (AURA)
+- `sections/aura-technology-new.liquid` (AURA)
+- `sections/aura-collections-new.liquid` (AURA)
+- `sections/aura-community-new.liquid` (AURA)
+- `sections/aura-faq-new.liquid` (AURA)
+- `sections/aura-newsletter-new.liquid` (AURA)
 
 ### Assets (CSS for new sections only)
 - `assets/index-banner-slider-new.css` (Home v2)
@@ -52,6 +64,17 @@ Only the following files may be pushed to Shopify:
 - `assets/aroza-features-new.css` (AROZA)
 - `assets/aroza-community-new.css` (AROZA)
 - `assets/aroza-newsletter-new.css` (AROZA)
+- `assets/aura-hero-new.css` (AURA)
+- `assets/aura-product-info-new.css` (AURA)
+- `assets/aura-stats-new.css` (AURA)
+- `assets/aura-features-accordion-new.css` (AURA)
+- `assets/aura-reviews-new.css` (AURA)
+- `assets/aura-press-new.css` (AURA)
+- `assets/aura-technology-new.css` (AURA)
+- `assets/aura-collections-new.css` (AURA)
+- `assets/aura-community-new.css` (AURA)
+- `assets/aura-faq-new.css` (AURA)
+- `assets/aura-newsletter-new.css` (AURA)
 
 ## Rules
 

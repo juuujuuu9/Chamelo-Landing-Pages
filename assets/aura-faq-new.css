@@ -1,0 +1,81 @@
+.Aura_faq_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Aura_faq_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 28px;
+  color: #000;
+  margin: 0 0 24px 0;
+}
+
+.Aura_faq_list_new {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Aura_faq_item_new {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Aura_faq_header_new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  list-style: none;
+}
+
+.Aura_faq_header_new::-webkit-details-marker {
+  display: none;
+}
+
+.Aura_faq_icon_new {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.Aura_faq_item_new[open] .Aura_faq_icon_new {
+  transform: rotate(45deg);
+}
+
+.Aura_faq_content_new {
+  padding: 0 0 20px 0;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.6;
+}
+
+.Aura_faq_view_all_new {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: underline;
+}
+
+.Aura_faq_view_all_new:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .Aura_faq_main_new {
+    padding: 40px 0;
+  }
+
+  .Aura_faq_heading_new {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,68 @@
+.Aura_technology_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Aura_technology_block_new {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.Aura_technology_block_new:last-child {
+  margin-bottom: 0;
+}
+
+.Aura_technology_media_new {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Aura_technology_img_new {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.Aura_technology_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 28px;
+  color: #000;
+  margin: 0 0 16px 0;
+}
+
+.Aura_technology_description_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.Aura_technology_button_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: underline;
+}
+
+.Aura_technology_button_new:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .Aura_technology_block_new {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .Aura_technology_heading_new {
+    font-size: 24px;
+  }
+}

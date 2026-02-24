@@ -1,0 +1,102 @@
+{{ 'aura-community-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Aura_community_main_new">
+  <div class="page-width">
+    {%- if section.settings.heading_small != blank -%}
+      <p class="Aura_community_subtitle_new">{{ section.settings.heading_small }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading_large != blank -%}
+      <h2 class="Aura_community_heading_new">{{ section.settings.heading_large }}</h2>
+    {%- endif -%}
+    
+    <div class="Aura_community_grid_new">
+      {%- for i in (1..6) -%}
+        {%- assign image_id = 'image_' | append: i -%}
+        {%- if section.settings[image_id] != blank -%}
+          <div class="Aura_community_item_new">
+            {{
+              section.settings[image_id] |
+              image_url: width: 600 |
+              image_tag: widths: '300, 400, 600',
+              fetchpriority: 'lazy',
+              class: 'Aura_community_img_new'
+            }}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    
+    {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+      <a href="{{ section.settings.button_link }}" class="Aura_community_button_new" target="_blank" rel="noopener">
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Aura Community",
+    "class": "Aura_community_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Subtitle",
+        "default": "JOIN THE COMMUNITY"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Heading",
+        "default": "Say hello to chamelo"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "Image 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_5",
+        "label": "Image 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_6",
+        "label": "Image 6"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "FOLLOW @HELLOCHAMELO"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aura Community"
+      }
+    ]
+  }
+{% endschema %}

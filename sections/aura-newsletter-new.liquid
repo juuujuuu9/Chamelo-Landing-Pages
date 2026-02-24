@@ -1,0 +1,59 @@
+{{ 'aura-newsletter-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Aura_newsletter_main_new">
+  <div class="page-width">
+    <div class="Aura_newsletter_inner_new">
+      <div class="Aura_newsletter_content_new">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="Aura_newsletter_heading_new">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <p class="Aura_newsletter_description_new">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+      
+      {%- form 'customer', class: 'Aura_newsletter_form_new' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="Aura_newsletter_success_new">Thanks for subscribing!</p>
+        {%- else -%}
+          <div class="Aura_newsletter_input_new">
+            <input type="email" name="contact[email]" class="Aura_newsletter_email_new" placeholder="Enter your email" required>
+            <button type="submit" class="Aura_newsletter_submit_new">{{ section.settings.button_text }}</button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Aura Newsletter",
+    "class": "Aura_newsletter_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Stay in the loop"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "Get the latest updates on new releases, exclusive offers, and Chamelo news."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "SUBSCRIBE"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aura Newsletter"
+      }
+    ]
+  }
+{% endschema %}

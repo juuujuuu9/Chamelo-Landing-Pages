@@ -1,0 +1,72 @@
+{{ 'aura-press-new.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="Aura_press_main_new">
+    <div class="page-width">
+      <div class="Aura_press_inner_new">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'logo' and block.settings.image != blank -%}
+            <div class="Aura_press_item_new" {{ block.shopify_attributes }}>
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="Aura_press_link_new" target="_blank" rel="noopener">
+                  {{
+                    block.settings.image |
+                    image_url: width: 200 |
+                    image_tag: widths: '100, 200',
+                    fetchpriority: 'lazy',
+                    class: 'Aura_press_img_new'
+                  }}
+                </a>
+              {%- else -%}
+                {{
+                  block.settings.image |
+                  image_url: width: 200 |
+                  image_tag: widths: '100, 200',
+                  fetchpriority: 'lazy',
+                  class: 'Aura_press_img_new'
+                }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Aura Press",
+    "class": "Aura_press_section_new",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "Press Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Logo Image"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Logo Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aura Press",
+        "blocks": [
+          { "type": "logo" },
+          { "type": "logo" },
+          { "type": "logo" },
+          { "type": "logo" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

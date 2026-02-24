@@ -1,0 +1,81 @@
+{{ 'aura-collections-new.css' | asset_url | stylesheet_tag }}
+
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="Aura_collections_main_new">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="Aura_collections_heading_new">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    <div class="Aura_collections_swiper_new swiper" id="collections-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {%- if collection != blank -%}
+          {%- for product in collection.products limit: 6 -%}
+            <div class="swiper-slide Aura_collections_slide_new">
+              <a href="{{ product.url }}" class="Aura_collections_card_new">
+                {%- if product.featured_image != blank -%}
+                  <div class="Aura_collections_image_new">
+                    {{
+                      product.featured_image |
+                      image_url: width: 500 |
+                      image_tag: widths: '250, 400, 500',
+                      fetchpriority: 'lazy',
+                      class: 'Aura_collections_img_new'
+                    }}
+                  </div>
+                {%- endif -%}
+                <div class="Aura_collections_info_new">
+                  <h3 class="Aura_collections_name_new">{{ product.title }}</h3>
+                  <p class="Aura_collections_price_new">{{ product.price | money }}</p>
+                </div>
+              </a>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#collections-{{ section.id }}', {
+        slidesPerView: 1.5,
+        spaceBetween: 12,
+        breakpoints: {
+          769: {
+            slidesPerView: 4,
+            spaceBetween: 24
+          }
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Aura Collections",
+    "class": "Aura_collections_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Effortlessly Switch Up Your Style"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aura Collections"
+      }
+    ]
+  }
+{% endschema %}

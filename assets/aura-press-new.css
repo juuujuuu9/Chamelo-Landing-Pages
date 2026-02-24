@@ -1,0 +1,41 @@
+.Aura_press_main_new {
+  background: #f5f5f5;
+  padding: 40px 0;
+}
+
+.Aura_press_inner_new {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Aura_press_item_new {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.Aura_press_item_new:hover {
+  opacity: 1;
+}
+
+.Aura_press_link_new {
+  display: block;
+}
+
+.Aura_press_img_new {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .Aura_press_inner_new {
+    gap: 24px;
+  }
+
+  .Aura_press_img_new {
+    max-height: 24px;
+  }
+}

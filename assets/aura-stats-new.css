@@ -1,0 +1,44 @@
+.Aura_stats_main_new {
+  background: #000;
+  padding: 40px 0;
+}
+
+.Aura_stats_grid_new {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.Aura_stats_item_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.Aura_stats_value_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+}
+
+.Aura_stats_label_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .Aura_stats_grid_new {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .Aura_stats_value_new {
+    font-size: 28px;
+  }
+}

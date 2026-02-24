@@ -1,0 +1,58 @@
+{{ 'aura-stats-new.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="Aura_stats_main_new">
+    <div class="page-width">
+      <div class="Aura_stats_grid_new">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'stat' -%}
+            <div class="Aura_stats_item_new" {{ block.shopify_attributes }}>
+              {%- if block.settings.value != blank -%}
+                <span class="Aura_stats_value_new">{{ block.settings.value }}</span>
+              {%- endif -%}
+              {%- if block.settings.label != blank -%}
+                <span class="Aura_stats_label_new">{{ block.settings.label }}</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Aura Stats",
+    "class": "Aura_stats_section_new",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "stat",
+        "name": "Stat",
+        "settings": [
+          {
+            "type": "text",
+            "id": "value",
+            "label": "Value"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aura Stats",
+        "blocks": [
+          { "type": "stat" },
+          { "type": "stat" },
+          { "type": "stat" }
+        ]
+      }
+    ]
+  }
+{% endschema %}
