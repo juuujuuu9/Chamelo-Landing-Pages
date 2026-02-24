@@ -12,29 +12,46 @@ This repo is a live Shopify production theme. When pushing to Shopify, ONLY push
 Only the following files may be pushed to Shopify:
 
 ### Templates
-- `templates/index.home-v2.json`
+- `templates/index.home-v2.json` (Home v2 landing page)
+- `templates/product.aroza-v2.json` (AROZA product landing page)
 
 ### Sections (new landing page sections only)
-- `sections/Index-banner-slider-new.liquid`
-- `sections/Index-bestsellers-cards-new.liquid`
-- `sections/Index-collection-cards-new.liquid`
-- `sections/Index-community-instagram-new.liquid`
-- `sections/Index-comparison-new.liquid`
-- `sections/Index-press-cards-new.liquid`
-- `sections/Index-promise-product-new.liquid`
-- `sections/Index-reviews-ugc-new.liquid`
-- `sections/Index-technology-cta-new.liquid`
+- `sections/Index-banner-slider-new.liquid` (Home v2)
+- `sections/Index-bestsellers-cards-new.liquid` (Home v2)
+- `sections/Index-collection-cards-new.liquid` (Home v2)
+- `sections/Index-community-instagram-new.liquid` (Home v2)
+- `sections/Index-comparison-new.liquid` (Home v2)
+- `sections/Index-press-cards-new.liquid` (Home v2)
+- `sections/Index-promise-product-new.liquid` (Home v2)
+- `sections/Index-reviews-ugc-new.liquid` (Home v2)
+- `sections/Index-technology-cta-new.liquid` (Home v2)
+- `sections/Aroza-hero-new.liquid` (AROZA)
+- `sections/Aroza-product-info-new.liquid` (AROZA)
+- `sections/Aroza-stats-new.liquid` (AROZA)
+- `sections/Aroza-reviews-new.liquid` (AROZA)
+- `sections/Aroza-collections-new.liquid` (AROZA)
+- `sections/Aroza-features-new.liquid` (AROZA)
+- `sections/Aroza-community-new.liquid` (AROZA)
+- `sections/Aroza-newsletter-new.liquid` (AROZA)
 
 ### Assets (CSS for new sections only)
-- `assets/index-banner-slider-new.css`
-- `assets/index-bestsellers-cards-new.css`
-- `assets/index-collection-cards-new.css`
-- `assets/index-community-instagram-new.css`
-- `assets/index-comparison-new.css`
-- `assets/index-press-cards-new.css`
-- `assets/index-promise-product-new.css`
-- `assets/index-reviews-ugc-new.css`
-- `assets/index-technology-cta-new.css`
+- `assets/index-banner-slider-new.css` (Home v2)
+- `assets/index-bestsellers-cards-new.css` (Home v2)
+- `assets/index-collection-cards-new.css` (Home v2)
+- `assets/index-community-instagram-new.css` (Home v2)
+- `assets/index-comparison-new.css` (Home v2)
+- `assets/index-press-cards-new.css` (Home v2)
+- `assets/index-promise-product-new.css` (Home v2)
+- `assets/index-reviews-ugc-new.css` (Home v2)
+- `assets/index-technology-cta-new.css` (Home v2)
+- `assets/aroza-hero-new.css` (AROZA)
+- `assets/aroza-product-info-new.css` (AROZA)
+- `assets/aroza-stats-new.css` (AROZA)
+- `assets/aroza-reviews-new.css` (AROZA)
+- `assets/aroza-collections-new.css` (AROZA)
+- `assets/aroza-features-new.css` (AROZA)
+- `assets/aroza-community-new.css` (AROZA)
+- `assets/aroza-newsletter-new.css` (AROZA)
 
 ## Rules
 

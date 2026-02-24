@@ -1,0 +1,89 @@
+{{ 'aroza-features-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Aroza_features_main_new">
+  {%- if section.settings.background_image != blank or section.settings.background_video != blank -%}
+    <div class="Aroza_features_media_new">
+      {%- if section.settings.background_video != blank -%}
+        {{ section.settings.background_video | video_tag: class: 'Aroza_features_vid_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+      {%- else -%}
+        {{
+          section.settings.background_image |
+          image_url: width: 1920 |
+          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944',
+          fetchpriority: 'lazy',
+          class: 'Aroza_features_img_new'
+        }}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="Aroza_features_content_new">
+    {%- if section.settings.heading_small != blank -%}
+      <p class="Aroza_features_subtitle_new">{{ section.settings.heading_small }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading_large != blank -%}
+      <h2 class="Aroza_features_heading_new">{{ section.settings.heading_large }}</h2>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="Aroza_features_description_new">{{ section.settings.description }}</p>
+    {%- endif -%}
+    {%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+      <a href="{{ section.settings.button_link }}" class="Aroza_features_button_new">
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Aroza Features",
+    "class": "Aroza_features_section_new",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "video",
+        "id": "background_video",
+        "label": "Background Video"
+      },
+      {
+        "type": "text",
+        "id": "heading_small",
+        "label": "Subtitle",
+        "default": "CHAMELO INNOVATION"
+      },
+      {
+        "type": "textarea",
+        "id": "heading_large",
+        "label": "Heading",
+        "default": "Adjusts For Every Mood"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Whether you're carving through powder or cruising groomers, Aroza adapts instantly. Our electrochromic technology lets you control tint with a tap—no more swapping lenses or struggling with changing light conditions."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "LEARN MORE"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aroza Features"
+      }
+    ]
+  }
+{% endschema %}

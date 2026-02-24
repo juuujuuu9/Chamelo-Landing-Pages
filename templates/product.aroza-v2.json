@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "hero": {
+      "type": "Aroza-hero-new",
+      "settings": {
+        "heading": "Premium Snow Goggles",
+        "subtitle": "With instant tint control.",
+        "button_text": "SHOP",
+        "button_product": "aroza-first-goggles-with-instant-electronic-tint-control",
+        "quote_text": "\"These aren't ordinary sunglasses. These are epic.\"",
+        "quote_logo_text": "NEW YORK POST"
+      }
+    },
+    "product_info": {
+      "type": "Aroza-product-info-new",
+      "settings": {
+        "product": "aroza-first-goggles-with-instant-electronic-tint-control",
+        "show_virtual_tryon": true,
+        "show_3d_view": true,
+        "show_audio_selector": true,
+        "status_text": "Only 18 Left",
+        "setup_heading": "3 Steps to set up your Aroza",
+        "step_1_text": "Pick your frame color",
+        "step_2_text": "Upload your prescription",
+        "step_3_text": "Place your order"
+      }
+    },
+    "stats": {
+      "type": "Aroza-stats-new",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "value": "0.1s",
+            "label": "Tint Change Speed"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "value": "4hr+",
+            "label": "Battery Life"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "IPX4",
+            "label": "Water Resistant"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"]
+    },
+    "reviews": {
+      "type": "Aroza-reviews-new",
+      "settings": {
+        "heading": "Real Chamelo Love",
+        "collection": "aroza-reviews"
+      }
+    },
+    "collections": {
+      "type": "Aroza-collections-new",
+      "settings": {
+        "heading": "Effortlessly Switch Up Your Style",
+        "collection": "all-products"
+      }
+    },
+    "features": {
+      "type": "Aroza-features-new",
+      "settings": {
+        "heading_small": "CHAMELO INNOVATION",
+        "heading_large": "Adjusts For Every Mood",
+        "description": "Whether you're carving through powder or cruising groomers, Aroza adapts instantly. Our electrochromic technology lets you control tint with a tap—no more swapping lenses or struggling with changing light conditions.",
+        "button_text": "LEARN MORE",
+        "button_link": "/pages/technology"
+      }
+    },
+    "community": {
+      "type": "Aroza-community-new",
+      "settings": {
+        "heading_small": "JOIN THE COMMUNITY",
+        "heading_large": "Say hello to chamelo",
+        "button_text": "FOLLOW @HELLOCHAMELO",
+        "button_link": "https://www.instagram.com/hellochamelo/"
+      }
+    },
+    "newsletter": {
+      "type": "Aroza-newsletter-new",
+      "settings": {
+        "heading": "Stay in the loop",
+        "description": "Get the latest updates on new releases, exclusive offers, and Chamelo news.",
+        "button_text": "SUBSCRIBE"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "product_info",
+    "stats",
+    "reviews",
+    "collections",
+    "features",
+    "community",
+    "newsletter"
+  ]
+}

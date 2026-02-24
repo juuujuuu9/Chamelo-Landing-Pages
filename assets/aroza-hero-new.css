@@ -1,0 +1,171 @@
+.Aroza_hero_main_new {
+  width: 100%;
+  background: #000;
+  position: relative;
+}
+
+.Aroza_hero_inner_new {
+  position: relative;
+  width: 100%;
+  height: 874px;
+  overflow: hidden;
+}
+
+.Aroza_hero_media_new {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.Aroza_hero_img_new,
+.Aroza_hero_vid_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Aroza_hero_content_new {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 220px 24px 60px;
+  text-align: center;
+}
+
+.Aroza_hero_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 600;
+  font-size: 45px;
+  color: #fff;
+  letter-spacing: -2.25px;
+  text-transform: capitalize;
+  line-height: 52px;
+  margin: 0 0 18px 0;
+}
+
+.Aroza_hero_subtitle_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0 0 40px 0;
+}
+
+.Aroza_hero_button_new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 42px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 4px;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: auto;
+}
+
+.Aroza_hero_button_new:hover {
+  background: rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.Aroza_hero_button_icon_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aroza_hero_quotebar_new {
+  background: #dbdbdb;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aroza_hero_quotebar_inner_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.Aroza_hero_quotebar_text_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+}
+
+.Aroza_hero_quotebar_logo_new {
+  width: 120px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Aroza_hero_quotebar_logo_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Aroza_hero_quotebar_logo_text_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  font-style: italic;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_hero_inner_new {
+    height: 600px;
+  }
+
+  .Aroza_hero_content_new {
+    padding: 120px 24px 40px;
+  }
+
+  .Aroza_hero_heading_new {
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -1.6px;
+  }
+
+  .Aroza_hero_subtitle_new {
+    font-size: 16px;
+  }
+
+  .Aroza_hero_button_new {
+    font-size: 14px;
+    padding: 10px 32px;
+  }
+
+  .Aroza_hero_quotebar_new {
+    padding: 16px;
+  }
+
+  .Aroza_hero_quotebar_text_new {
+    font-size: 12px;
+  }
+
+  .Aroza_hero_quotebar_logo_new {
+    width: 100px;
+    height: 16px;
+  }
+}

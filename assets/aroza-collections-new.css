@@ -1,0 +1,76 @@
+.Aroza_collections_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Aroza_collections_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.Aroza_collections_swiper_new {
+  overflow: hidden;
+}
+
+.Aroza_collections_slide_new {
+  height: auto;
+}
+
+.Aroza_collections_card_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.Aroza_collections_image_new {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.Aroza_collections_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.Aroza_collections_card_new:hover .Aroza_collections_img_new {
+  transform: scale(1.05);
+}
+
+.Aroza_collections_info_new {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Aroza_collections_name_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+}
+
+.Aroza_collections_price_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 13px;
+  color: #000;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_collections_heading_new {
+    font-size: 24px;
+  }
+}

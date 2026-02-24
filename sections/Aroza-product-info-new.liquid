@@ -1,0 +1,396 @@
+{{ 'aroza-product-info-new.css' | asset_url | stylesheet_tag }}
+
+{%- assign product = all_products[section.settings.product] -%}
+{%- if product != blank -%}
+  <div class="Aroza_product_info_main_new">
+    <div class="page-width">
+      <div class="Aroza_product_info_inner_new">
+        <div class="Aroza_product_info_gallery_new">
+          <div class="Aroza_product_info_gallery_swiper_new swiper" id="product-gallery-{{ section.id }}">
+            <div class="swiper-wrapper">
+              {%- for image in product.images -%}
+                <div class="swiper-slide Aroza_product_info_gallery_slide_new">
+                  {{
+                    image |
+                    image_url: width: 800 |
+                    image_tag: widths: '400, 600, 800',
+                    fetchpriority: 'auto',
+                    class: 'Aroza_product_info_gallery_img_new'
+                  }}
+                </div>
+              {%- endfor -%}
+            </div>
+            <div class="Aroza_product_info_gallery_pagination_new swiper-pagination"></div>
+          </div>
+          
+          <div class="Aroza_product_info_gallery_buttons_new">
+            {%- if section.settings.show_virtual_tryon -%}
+              <button class="Aroza_product_info_gallery_btn_new" data-action="virtual-tryon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="10" cy="10" r="3" fill="currentColor"/>
+                </svg>
+                VIRTUAL TRY-ON
+              </button>
+            {%- endif -%}
+            {%- if section.settings.show_3d_view -%}
+              <button class="Aroza_product_info_gallery_btn_new" data-action="3d-view">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 2L18 7V13L10 18L2 13V7L10 2Z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10 10L18 7M10 10V18M10 10L2 7" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                3D PRODUCT VIEW
+              </button>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="Aroza_product_info_details_new">
+          {%- if section.settings.status_text != blank -%}
+            <div class="Aroza_product_info_status_new">
+              <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 0L11 8H1L6 0Z" fill="#FF6B35"/>
+                <path d="M6 16L1 8H11L6 16Z" fill="#FF6B35"/>
+              </svg>
+              <span>{{ section.settings.status_text }}</span>
+            </div>
+          {%- endif -%}
+
+          <div class="Aroza_product_info_selector_new">
+            <div class="Aroza_product_info_selector_header_new">
+              <div class="Aroza_product_info_color_label_new">
+                <span class="Aroza_product_info_color_title_new">Frame Color</span>
+                <span class="Aroza_product_info_color_value_new" id="frame-color-{{ section.id }}">{{ product.selected_or_first_available_variant.title | split: ' / ' | first }}</span>
+              </div>
+              <a href="#size-fit" class="Aroza_product_info_sizefit_new">
+                <span>Size and fit</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="10" y="14" text-anchor="middle" font-size="10" fill="currentColor">i</text>
+                </svg>
+              </a>
+            </div>
+            
+            <div class="Aroza_product_info_variants_new">
+              {%- for variant in product.variants -%}
+                <button class="Aroza_product_info_variant_new {% if forloop.first %}active{% endif %}" 
+                        data-variant-id="{{ variant.id }}"
+                        data-variant-title="{{ variant.title | split: ' / ' | first }}"
+                        onclick="selectVariant{{ section.id | replace: '-', '_' }}(this)">
+                  {%- if variant.featured_image != blank -%}
+                    {{
+                      variant.featured_image |
+                      image_url: width: 90 |
+                      image_tag: widths: '45, 90',
+                      fetchpriority: 'lazy',
+                      class: 'Aroza_product_info_variant_img_new'
+                    }}
+                  {%- elsif variant.image != blank -%}
+                    {{
+                      variant.image |
+                      image_url: width: 90 |
+                      image_tag: widths: '45, 90',
+                      fetchpriority: 'lazy',
+                      class: 'Aroza_product_info_variant_img_new'
+                    }}
+                  {%- endif -%}
+                </button>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          <div class="Aroza_product_info_meta_new">
+            <div class="Aroza_product_info_rating_new">
+              <div class="Aroza_product_info_stars_new">
+                {%- for i in (1..5) -%}
+                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.5 0L8.16 4.08L12.6 4.58L9.3 7.52L10.18 11.88L6.5 9.77L2.82 11.88L3.7 7.52L0.4 4.58L4.84 4.08L6.5 0Z" fill="#000"/>
+                  </svg>
+                {%- endfor -%}
+              </div>
+              <span class="Aroza_product_info_rating_count_new">({{ product.metafields.reviews.rating_count | default: '0' }})</span>
+            </div>
+            <h1 class="Aroza_product_info_name_new">{{ product.title }}</h1>
+            <p class="Aroza_product_info_price_new">{{ product.price | money }}</p>
+            {%- if product.description != blank -%}
+              <p class="Aroza_product_info_tagline_new">{{ product.description | strip_html | truncate: 120 }}</p>
+            {%- endif -%}
+          </div>
+
+          {%- if section.settings.show_audio_selector -%}
+            <div class="Aroza_product_info_audio_new">
+              <p class="Aroza_product_info_audio_label_new">AUDIO</p>
+              <div class="Aroza_product_info_audio_toggle_new">
+                <button class="Aroza_product_info_audio_btn_new active" data-audio="with" onclick="toggleAudio{{ section.id | replace: '-', '_' }}(this)">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/>
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="currentColor"/>
+                  </svg>
+                  <span>With Audio</span>
+                </button>
+                <button class="Aroza_product_info_audio_btn_new" data-audio="without" onclick="toggleAudio{{ section.id | replace: '-', '_' }}(this)">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63z" fill="currentColor"/>
+                    <path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor" opacity="0.5"/>
+                  </svg>
+                  <span>Without Audio</span>
+                </button>
+              </div>
+            </div>
+          {%- endif -%}
+
+          <div class="Aroza_product_info_purchase_new">
+            <div class="Aroza_product_info_addtocart_new">
+              <div class="Aroza_product_info_qty_new">
+                <button class="Aroza_product_info_qty_btn_new" onclick="updateQty{{ section.id | replace: '-', '_' }}(-1)">-</button>
+                <input type="number" class="Aroza_product_info_qty_input_new" id="qty-{{ section.id }}" value="1" min="1" max="10" readonly>
+                <button class="Aroza_product_info_qty_btn_new" onclick="updateQty{{ section.id | replace: '-', '_' }}(1)">+</button>
+              </div>
+              <button class="Aroza_product_info_atc_btn_new" onclick="addToCart{{ section.id | replace: '-', '_' }}()">
+                ADD TO CART
+              </button>
+            </div>
+            <a href="{{ product.url }}?prescription=true" class="Aroza_product_info_rx_new">
+              <span class="Aroza_product_info_rx_line_new"></span>
+              <span>ADD PRESCRIPTION LENSES</span>
+              <span class="Aroza_product_info_rx_line_new"></span>
+            </a>
+          </div>
+
+          <div class="Aroza_product_info_shipping_new">
+            <div class="Aroza_product_info_shipping_item_new">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="12" width="30" height="20" rx="2" stroke="#000" stroke-width="2"/>
+                <path d="M5 16h30M15 28h10" stroke="#000" stroke-width="2"/>
+              </svg>
+              <span>Fast & Free Shipping</span>
+            </div>
+            <div class="Aroza_product_info_shipping_item_new">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="15" stroke="#000" stroke-width="2"/>
+                <path d="M20 10v10l7 7" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span>30-Day Money Back guarantee</span>
+            </div>
+            <div class="Aroza_product_info_shipping_item_new">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 5l15 8v14l-15 8-15-8V13l15-8z" stroke="#000" stroke-width="2"/>
+                <path d="M20 20l15-7M20 20v16M20 20L5 13" stroke="#000" stroke-width="2"/>
+              </svg>
+              <span>1-Year Warranty</span>
+            </div>
+          </div>
+
+          {%- if section.settings.setup_heading != blank -%}
+            <div class="Aroza_product_info_setup_new">
+              <p class="Aroza_product_info_setup_heading_new">{{ section.settings.setup_heading }}</p>
+              <div class="Aroza_product_info_setup_steps_new">
+                <div class="Aroza_product_info_setup_step_new">
+                  <svg width="31" height="19" viewBox="0 0 31 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="29" height="17" rx="8.5" stroke="#000" stroke-width="2"/>
+                    <circle cx="15.5" cy="9.5" r="4" fill="#000"/>
+                  </svg>
+                  <span>{{ section.settings.step_1_text }}</span>
+                </div>
+                <div class="Aroza_product_info_setup_step_new">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 2L24 8v11l-10.5 6L3 19V8l10.5-6z" stroke="#000" stroke-width="2"/>
+                    <path d="M13.5 13.5l10.5-5.5M13.5 13.5v11M13.5 13.5L3 8" stroke="#000" stroke-width="2"/>
+                  </svg>
+                  <span>{{ section.settings.step_2_text }}</span>
+                </div>
+                <div class="Aroza_product_info_setup_step_new">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="6" width="21" height="18" rx="2" stroke="#000" stroke-width="2"/>
+                    <path d="M3 10h21M8 22v-7m11 7v-7" stroke="#000" stroke-width="2"/>
+                  </svg>
+                  <span>{{ section.settings.step_3_text }}</span>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+
+          <div class="Aroza_product_info_accordion_new">
+            <details class="Aroza_product_info_accordion_item_new">
+              <summary class="Aroza_product_info_accordion_header_new">
+                <span>Details</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </summary>
+              <div class="Aroza_product_info_accordion_content_new">
+                {{ product.description }}
+              </div>
+            </details>
+            <details class="Aroza_product_info_accordion_item_new">
+              <summary class="Aroza_product_info_accordion_header_new">
+                <span>What's in the box</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </summary>
+              <div class="Aroza_product_info_accordion_content_new">
+                <ul>
+                  <li>Aroza Goggles</li>
+                  <li>Carrying Case</li>
+                  <li>Charging Cable</li>
+                  <li>Cleaning Cloth</li>
+                  <li>User Manual</li>
+                </ul>
+              </div>
+            </details>
+            <details class="Aroza_product_info_accordion_item_new" id="size-fit">
+              <summary class="Aroza_product_info_accordion_header_new">
+                <span>Size and fit</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </summary>
+              <div class="Aroza_product_info_accordion_content_new">
+                <p>Prescription Range:</p>
+                <ul>
+                  <li>SPH: +/- 1.00-7.00</li>
+                  <li>CYL: +/- 3.00</li>
+                  <li>Single Vision Only</li>
+                </ul>
+              </div>
+            </details>
+            <details class="Aroza_product_info_accordion_item_new">
+              <summary class="Aroza_product_info_accordion_header_new">
+                <span>Shipping & returns</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </summary>
+              <div class="Aroza_product_info_accordion_content_new">
+                <p>Free shipping on all orders. 30-day money-back guarantee. 1-year warranty included.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('#product-gallery-{{ section.id }}', {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          pagination: {
+            el: '#product-gallery-{{ section.id }} .swiper-pagination',
+            clickable: true
+          }
+        });
+      }
+    });
+
+    var currentVariant{{ section.id | replace: '-', '_' }} = '{{ product.selected_or_first_available_variant.id }}';
+    var currentQty{{ section.id | replace: '-', '_' }} = 1;
+
+    function selectVariant{{ section.id | replace: '-', '_' }}(btn) {
+      document.querySelectorAll('.Aroza_product_info_variant_new').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentVariant{{ section.id | replace: '-', '_' }} = btn.dataset.variantId;
+      document.getElementById('frame-color-{{ section.id }}').textContent = btn.dataset.variantTitle;
+    }
+
+    function toggleAudio{{ section.id | replace: '-', '_' }}(btn) {
+      document.querySelectorAll('.Aroza_product_info_audio_btn_new').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+    }
+
+    function updateQty{{ section.id | replace: '-', '_' }}(change) {
+      var input = document.getElementById('qty-{{ section.id }}');
+      var val = parseInt(input.value) + change;
+      if (val >= 1 && val <= 10) {
+        input.value = val;
+        currentQty{{ section.id | replace: '-', '_' }} = val;
+      }
+    }
+
+    function addToCart{{ section.id | replace: '-', '_' }}() {
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: [{ id: parseInt(currentVariant{{ section.id | replace: '-', '_' }}), quantity: currentQty{{ section.id | replace: '-', '_' }} }]
+        })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function() {
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+        var cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer && typeof cartDrawer.open === 'function') cartDrawer.open();
+      });
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Aroza Product Info",
+    "class": "Aroza_product_info_section_new",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_virtual_tryon",
+        "label": "Show Virtual Try-On Button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_3d_view",
+        "label": "Show 3D Product View Button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_audio_selector",
+        "label": "Show Audio Selector",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "status_text",
+        "label": "Status Badge Text",
+        "default": "Only 18 Left"
+      },
+      {
+        "type": "text",
+        "id": "setup_heading",
+        "label": "Setup Heading",
+        "default": "3 Steps to set up your Aroza"
+      },
+      {
+        "type": "text",
+        "id": "step_1_text",
+        "label": "Step 1 Text",
+        "default": "Pick your frame color"
+      },
+      {
+        "type": "text",
+        "id": "step_2_text",
+        "label": "Step 2 Text",
+        "default": "Upload your prescription"
+      },
+      {
+        "type": "text",
+        "id": "step_3_text",
+        "label": "Step 3 Text",
+        "default": "Place your order"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aroza Product Info"
+      }
+    ]
+  }
+{% endschema %}

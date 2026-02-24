@@ -1,0 +1,166 @@
+{{ 'aroza-hero-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Aroza_hero_main_new">
+  <div class="Aroza_hero_inner_new">
+    {%- if section.settings.desktop_image != blank or section.settings.desktop_video != blank -%}
+      <div class="Aroza_hero_media_new Desktop_only_new">
+        {%- if section.settings.desktop_video != blank -%}
+          {{ section.settings.desktop_video | video_tag: class: 'Aroza_hero_vid_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+        {%- else -%}
+          {{
+            section.settings.desktop_image |
+            image_url: width: 1920 |
+            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944',
+            fetchpriority: 'high',
+            class: 'Aroza_hero_img_new'
+          }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    
+    {%- if section.settings.mobile_image != blank or section.settings.mobile_video != blank -%}
+      <div class="Aroza_hero_media_new Mobile_only_new">
+        {%- if section.settings.mobile_video != blank -%}
+          {{ section.settings.mobile_video | video_tag: class: 'Aroza_hero_vid_new', image_size: 'master', controls: false, autoplay: true, loop: true, muted: true }}
+        {%- else -%}
+          {{
+            section.settings.mobile_image |
+            image_url: width: 750 |
+            image_tag: widths: '375, 500, 750',
+            fetchpriority: 'high',
+            class: 'Aroza_hero_img_new'
+          }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="Aroza_hero_content_new">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="Aroza_hero_heading_new">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="Aroza_hero_subtitle_new">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      
+      {%- assign product = all_products[section.settings.button_product] -%}
+      {%- if section.settings.button_text != blank and product != blank -%}
+        <a href="{{ product.url }}" class="Aroza_hero_button_new">
+          <span class="Aroza_hero_button_text_new">{{ section.settings.button_text }}</span>
+          <span class="Aroza_hero_button_icon_new">
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 0L12 8H4L8 0Z" fill="white"/>
+              <path d="M8 24L4 16H12L8 24Z" fill="white"/>
+              <circle cx="8" cy="12" r="4" fill="white"/>
+            </svg>
+          </span>
+          <span class="Aroza_hero_button_product_new">{{ product.title | default: 'AROZA' }}</span>
+        </a>
+      {%- elsif section.settings.button_link != blank -%}
+        <a href="{{ section.settings.button_link }}" class="Aroza_hero_button_new">
+          <span class="Aroza_hero_button_text_new">{{ section.settings.button_text }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.quote_text != blank or section.settings.quote_logo != blank -%}
+    <div class="Aroza_hero_quotebar_new">
+      <div class="Aroza_hero_quotebar_inner_new">
+        {%- if section.settings.quote_text != blank -%}
+          <p class="Aroza_hero_quotebar_text_new">{{ section.settings.quote_text }}</p>
+        {%- endif -%}
+        {%- if section.settings.quote_logo != blank -%}
+          <div class="Aroza_hero_quotebar_logo_new">
+            {{
+              section.settings.quote_logo |
+              image_url: width: 240 |
+              image_tag: widths: '120, 240',
+              fetchpriority: 'auto',
+              class: 'Aroza_hero_quotebar_logo_img_new'
+            }}
+          </div>
+        {%- elsif section.settings.quote_logo_text != blank -%}
+          <p class="Aroza_hero_quotebar_logo_text_new">{{ section.settings.quote_logo_text }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Aroza Hero",
+    "class": "Aroza_hero_section_new",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "video",
+        "id": "desktop_video",
+        "label": "Desktop Video"
+      },
+      {
+        "type": "video",
+        "id": "mobile_video",
+        "label": "Mobile Video"
+      },
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Premium Snow Goggles"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "With instant tint control."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "SHOP"
+      },
+      {
+        "type": "product",
+        "id": "button_product",
+        "label": "Button Product"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link (if no product)"
+      },
+      {
+        "type": "text",
+        "id": "quote_text",
+        "label": "Quote Bar Text",
+        "default": "\"These aren't ordinary sunglasses. These are epic.\""
+      },
+      {
+        "type": "image_picker",
+        "id": "quote_logo",
+        "label": "Quote Bar Logo"
+      },
+      {
+        "type": "text",
+        "id": "quote_logo_text",
+        "label": "Quote Bar Logo Text (if no image)"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aroza Hero"
+      }
+    ]
+  }
+{% endschema %}

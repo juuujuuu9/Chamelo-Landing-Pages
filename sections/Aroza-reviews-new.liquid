@@ -1,0 +1,122 @@
+{{ 'aroza-reviews-new.css' | asset_url | stylesheet_tag }}
+
+<div class="Aroza_reviews_main_new">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="Aroza_reviews_heading_new">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    <div class="Aroza_reviews_swiper_new swiper" id="reviews-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {%- assign review_blocks = section.blocks | where: 'type', 'review' -%}
+        {%- for block in review_blocks -%}
+          <div class="swiper-slide Aroza_reviews_slide_new" {{ block.shopify_attributes }}>
+            <div class="Aroza_reviews_card_new">
+              {%- if block.settings.quote != blank -%}
+                <p class="Aroza_reviews_quote_new">"{{ block.settings.quote }}"</p>
+              {%- endif -%}
+              <div class="Aroza_reviews_author_new">
+                {%- if block.settings.avatar != blank -%}
+                  <div class="Aroza_reviews_avatar_new">
+                    {{
+                      block.settings.avatar |
+                      image_url: width: 108 |
+                      image_tag: widths: '54, 108',
+                      fetchpriority: 'lazy',
+                      class: 'Aroza_reviews_avatar_img_new'
+                    }}
+                  </div>
+                {%- endif -%}
+                <div class="Aroza_reviews_info_new">
+                  <div class="Aroza_reviews_stars_new">
+                    {%- for i in (1..5) -%}
+                      <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 0L8.16 4.08L12.6 4.58L9.3 7.52L10.18 11.88L6.5 9.77L2.82 11.88L3.7 7.52L0.4 4.58L4.84 4.08L6.5 0Z" fill="#000"/>
+                      </svg>
+                    {%- endfor -%}
+                  </div>
+                  {%- if block.settings.name != blank -%}
+                    <p class="Aroza_reviews_name_new">{{ block.settings.name }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.date != blank -%}
+                    <p class="Aroza_reviews_date_new">{{ block.settings.date }}</p>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('#reviews-{{ section.id }}', {
+        slidesPerView: 1.2,
+        spaceBetween: 12,
+        breakpoints: {
+          769: {
+            slidesPerView: 3,
+            spaceBetween: 24
+          }
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Aroza Reviews",
+    "class": "Aroza_reviews_section_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Real Chamelo Love"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "review",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "quote",
+            "label": "Review Quote"
+          },
+          {
+            "type": "image_picker",
+            "id": "avatar",
+            "label": "Reviewer Avatar"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Reviewer Name"
+          },
+          {
+            "type": "text",
+            "id": "date",
+            "label": "Review Date"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aroza Reviews",
+        "blocks": [
+          { "type": "review" },
+          { "type": "review" },
+          { "type": "review" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

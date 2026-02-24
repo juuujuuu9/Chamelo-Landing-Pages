@@ -1,0 +1,79 @@
+.Aroza_community_main_new {
+  background: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.Aroza_community_subtitle_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 12px 0;
+}
+
+.Aroza_community_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  text-transform: lowercase;
+  margin: 0 0 40px 0;
+}
+
+.Aroza_community_grid_new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.Aroza_community_item_new {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Aroza_community_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.Aroza_community_item_new:hover .Aroza_community_img_new {
+  transform: scale(1.05);
+}
+
+.Aroza_community_button_new {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  border: 1px solid #000;
+  background: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Aroza_community_button_new:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_community_grid_new {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Aroza_community_heading_new {
+    font-size: 24px;
+  }
+}

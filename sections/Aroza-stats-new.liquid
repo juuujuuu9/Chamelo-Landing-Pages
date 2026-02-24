@@ -1,0 +1,60 @@
+{{ 'aroza-stats-new.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="Aroza_stats_main_new">
+    <div class="page-width">
+      <div class="Aroza_stats_grid_new">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'stat' -%}
+            <div class="Aroza_stats_item_new" {{ block.shopify_attributes }}>
+              {%- if block.settings.value != blank -%}
+                <span class="Aroza_stats_value_new">{{ block.settings.value }}</span>
+              {%- endif -%}
+              {%- if block.settings.label != blank -%}
+                <span class="Aroza_stats_label_new">{{ block.settings.label }}</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Aroza Stats",
+    "class": "Aroza_stats_section_new",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "stat",
+        "name": "Stat",
+        "settings": [
+          {
+            "type": "text",
+            "id": "value",
+            "label": "Value",
+            "default": "0.1s"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "Tint Change Speed"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Aroza Stats",
+        "blocks": [
+          { "type": "stat" },
+          { "type": "stat" },
+          { "type": "stat" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

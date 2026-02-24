@@ -1,0 +1,503 @@
+.Aroza_product_info_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Aroza_product_info_inner_new {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.Aroza_product_info_gallery_new {
+  position: sticky;
+  top: 100px;
+}
+
+.Aroza_product_info_gallery_swiper_new {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.Aroza_product_info_gallery_slide_new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Aroza_product_info_gallery_img_new {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Aroza_product_info_gallery_pagination_new {
+  position: relative;
+  bottom: 0 !important;
+  margin-top: 16px;
+}
+
+.Aroza_product_info_gallery_pagination_new .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  opacity: 1;
+}
+
+.Aroza_product_info_gallery_pagination_new .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+.Aroza_product_info_gallery_buttons_new {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.Aroza_product_info_gallery_btn_new {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Aroza_product_info_gallery_btn_new:hover {
+  border-color: #000;
+}
+
+.Aroza_product_info_details_new {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Aroza_product_info_status_new {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 17px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.Aroza_product_info_status_new span {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 13px;
+  color: #000;
+}
+
+.Aroza_product_info_selector_new {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Aroza_product_info_selector_header_new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Aroza_product_info_color_label_new {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.Aroza_product_info_color_title_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.Aroza_product_info_color_value_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+}
+
+.Aroza_product_info_sizefit_new {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  text-decoration: underline;
+}
+
+.Aroza_product_info_variants_new {
+  display: flex;
+  gap: 8px;
+}
+
+.Aroza_product_info_variant_new {
+  width: 90px;
+  height: 49px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: border-color 0.2s ease;
+}
+
+.Aroza_product_info_variant_new.active {
+  border-color: #000;
+  border-width: 2px;
+}
+
+.Aroza_product_info_variant_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Aroza_product_info_meta_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Aroza_product_info_rating_new {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Aroza_product_info_stars_new {
+  display: flex;
+  gap: 2px;
+}
+
+.Aroza_product_info_rating_count_new {
+  font-family: var(--font-mono-family, 'TT Norms Pro Mono', monospace);
+  font-size: 12px;
+  color: #000;
+}
+
+.Aroza_product_info_name_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 28px;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.Aroza_product_info_price_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 0.75px;
+  margin: 0;
+}
+
+.Aroza_product_info_tagline_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.Aroza_product_info_audio_new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Aroza_product_info_audio_label_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.Aroza_product_info_audio_toggle_new {
+  display: flex;
+  gap: 8px;
+}
+
+.Aroza_product_info_audio_btn_new {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid #dbdbdb;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #000;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 14px;
+  height: 52px;
+}
+
+.Aroza_product_info_audio_btn_new.active {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.Aroza_product_info_purchase_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.Aroza_product_info_addtocart_new {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.Aroza_product_info_qty_new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #0c0c0c;
+  background: #fff;
+  padding: 0 8px;
+  height: 52px;
+}
+
+.Aroza_product_info_qty_btn_new {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  padding: 0;
+}
+
+.Aroza_product_info_qty_input_new {
+  width: 30px;
+  text-align: center;
+  border: none;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 15px;
+  background: transparent;
+  -moz-appearance: textfield;
+}
+
+.Aroza_product_info_qty_input_new::-webkit-outer-spin-button,
+.Aroza_product_info_qty_input_new::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Aroza_product_info_atc_btn_new {
+  flex: 1;
+  height: 52px;
+  background: #116885;
+  border: 1px solid #000;
+  color: #fff;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.Aroza_product_info_atc_btn_new:hover {
+  opacity: 0.85;
+}
+
+.Aroza_product_info_rx_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 4px 0;
+}
+
+.Aroza_product_info_rx_line_new {
+  display: block;
+  width: 252px;
+  height: 2px;
+  background: #000;
+}
+
+.Aroza_product_info_rx_new span:nth-child(2) {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.Aroza_product_info_shipping_new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 24px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Aroza_product_info_shipping_item_new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.Aroza_product_info_shipping_item_new svg {
+  width: 40px;
+  height: 40px;
+}
+
+.Aroza_product_info_shipping_item_new span {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 12px;
+  color: #000;
+  line-height: 1.3;
+}
+
+.Aroza_product_info_setup_new {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Aroza_product_info_setup_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+}
+
+.Aroza_product_info_setup_steps_new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Aroza_product_info_setup_step_new {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Aroza_product_info_setup_step_new svg {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+}
+
+.Aroza_product_info_setup_step_new span {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 13px;
+  color: #000;
+}
+
+.Aroza_product_info_accordion_new {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Aroza_product_info_accordion_item_new {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Aroza_product_info_accordion_header_new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+  list-style: none;
+}
+
+.Aroza_product_info_accordion_header_new::-webkit-details-marker {
+  display: none;
+}
+
+.Aroza_product_info_accordion_header_new svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.Aroza_product_info_accordion_item_new[open] .Aroza_product_info_accordion_header_new svg {
+  transform: rotate(45deg);
+}
+
+.Aroza_product_info_accordion_content_new {
+  padding: 0 0 16px 0;
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+}
+
+.Aroza_product_info_accordion_content_new ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.Aroza_product_info_accordion_content_new li {
+  margin-bottom: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_product_info_inner_new {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .Aroza_product_info_gallery_new {
+    position: relative;
+    top: 0;
+  }
+
+  .Aroza_product_info_name_new {
+    font-size: 24px;
+  }
+
+  .Aroza_product_info_shipping_new {
+    grid-template-columns: 1fr;
+  }
+
+  .Aroza_product_info_audio_toggle_new {
+    flex-direction: column;
+  }
+}

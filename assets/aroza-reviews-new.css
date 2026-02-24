@@ -1,0 +1,93 @@
+.Aroza_reviews_main_new {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.Aroza_reviews_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.Aroza_reviews_swiper_new {
+  overflow: hidden;
+}
+
+.Aroza_reviews_slide_new {
+  height: auto;
+}
+
+.Aroza_reviews_card_new {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Aroza_reviews_quote_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.Aroza_reviews_author_new {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Aroza_reviews_avatar_new {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.Aroza_reviews_avatar_img_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Aroza_reviews_info_new {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Aroza_reviews_stars_new {
+  display: flex;
+  gap: 2px;
+}
+
+.Aroza_reviews_name_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+}
+
+.Aroza_reviews_date_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_reviews_heading_new {
+    font-size: 24px;
+  }
+}

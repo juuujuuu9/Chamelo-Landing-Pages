@@ -1,0 +1,98 @@
+.Aroza_features_main_new {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.Aroza_features_media_new {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.Aroza_features_img_new,
+.Aroza_features_vid_new {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Aroza_features_content_new {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 60px 24px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+}
+
+.Aroza_features_subtitle_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px 0;
+}
+
+.Aroza_features_heading_new {
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+  margin: 0 0 24px 0;
+  line-height: 1.2;
+}
+
+.Aroza_features_description_new {
+  font-family: var(--font-body-family, 'TT Norms Pro', sans-serif);
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Aroza_features_button_new {
+  display: inline-block;
+  padding: 16px 42px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(9px);
+  border-radius: 4px;
+  font-family: var(--font-heading-family, 'TT Norms Pro', sans-serif);
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.Aroza_features_button_new:hover {
+  background: rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .Aroza_features_main_new {
+    min-height: 500px;
+  }
+
+  .Aroza_features_heading_new {
+    font-size: 28px;
+  }
+
+  .Aroza_features_description_new {
+    font-size: 14px;
+  }
+}

@@ -3,8 +3,9 @@
 
 # Allow landing page templates
 !templates/index.home-v2.json
+!templates/product.aroza-v2.json
 
-# Allow new landing page sections
+# Allow new landing page sections - Home v2
 !sections/Index-banner-slider-new.liquid
 !sections/Index-bestsellers-cards-new.liquid
 !sections/Index-collection-cards-new.liquid
@@ -15,7 +16,17 @@
 !sections/Index-reviews-ugc-new.liquid
 !sections/Index-technology-cta-new.liquid
 
-# Allow new landing page CSS
+# Allow new landing page sections - AROZA v2
+!sections/Aroza-hero-new.liquid
+!sections/Aroza-product-info-new.liquid
+!sections/Aroza-stats-new.liquid
+!sections/Aroza-reviews-new.liquid
+!sections/Aroza-collections-new.liquid
+!sections/Aroza-features-new.liquid
+!sections/Aroza-community-new.liquid
+!sections/Aroza-newsletter-new.liquid
+
+# Allow new landing page CSS - Home v2
 !assets/index-banner-slider-new.css
 !assets/index-bestsellers-cards-new.css
 !assets/index-collection-cards-new.css
@@ -25,6 +36,16 @@
 !assets/index-promise-product-new.css
 !assets/index-reviews-ugc-new.css
 !assets/index-technology-cta-new.css
+
+# Allow new landing page CSS - AROZA v2
+!assets/aroza-hero-new.css
+!assets/aroza-product-info-new.css
+!assets/aroza-stats-new.css
+!assets/aroza-reviews-new.css
+!assets/aroza-collections-new.css
+!assets/aroza-features-new.css
+!assets/aroza-community-new.css
+!assets/aroza-newsletter-new.css
 
 # Allow cursor rules and project config
 !.cursor/
